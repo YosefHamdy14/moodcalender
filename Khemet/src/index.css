@@ -110,6 +110,7 @@ padding-bottom:0px ;
   background-color: #EFE4C4;
   border: #EFE4C4 1px solid;
   padding: 20px 90px;
+  border-bottom: hsl(32, 24%, 37%,0.2) 1px solid;
 }
 .home-num-cont{
   width: 100%;
@@ -131,14 +132,125 @@ padding-bottom:0px ;
 .num-det{
     color:#7A6040;
     font-size: 18px;
+    font: 1em sans-serif;
 }
-.tit{
+
+.search-home{
+  background-color: #FDF8EE;
+}
+.search-home-content{
+   padding: 50px 130px;
+  
+}
+.search-home-t{
+   margin: 5px;
+  color: #C9A84C;
+  letter-spacing: 2.9px;
+  font: 12px "Karla", ui-sans-serif, system-ui, sans-serif;;
+  font-weight: 405;
+}
+.search-home-tit{
   color: #154159;
-  font-family: 'Cinzel', serif;
-  font-weight: 500;
-  font-size: 1.5rem;
-  padding-top: 20px;
-  margin: 20px 20px 5px 60px;
+  font: 47px   Cormorant Garamond, ui-serif, Georgia, serif;
+  margin: 10px;
+}
+.search-tags{
+  margin: 10px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  flex-wrap: wrap;
+  margin: 10px;
+  align-self: center;
+  gap: 35px;
+}
+.search-home-dit{
+  margin-left: 10px;
+  color:#7A6040;
+  font: 1em "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 10px;
+  margin-bottom: 20px;
+}
+
+.tag-card{
+  background-color: #EFE4C4;
+  border: #EFE4C4 1px solid;
+  border-radius: 20px;
+  padding: 40px 20px;
+  padding-left: 30px;
+}
+.search-home-card-tit{
+ color: #154159;
+  font: 25px   Cormorant Garamond, ui-serif, Georgia, serif;
+  margin: 10px;
+  margin-left: 0px;
+}
+.search-home-card-p{
+ margin-left: 10px;
+  color:#7A6040;
+  font: 1em "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 10px;
+  margin-left: 0px;
+}
+
+
+
+
+
+.featured{
+  padding: 50px 130px;
+}
+.popular-svg{
+  position: relative;
+  top: 13px;
+  padding-right: 5px;
+   font-family: "Karla", sans-serif;
+}
+.popular-h5{
+  margin: 5px;
+  color: #C9A84C;
+  letter-spacing: 2.9px;
+  font: 12px "Karla", ui-sans-serif, system-ui, sans-serif;;
+  font-weight: 405;
+
+}
+.popular-tit{
+  color: #154159;
+  font: 47px   Cormorant Garamond, ui-serif, Georgia, serif;
+  margin: 10px;
+}
+.popular-det{
+  margin-left: 10px;
+  color:#7A6040;
+  font: 1em "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 10px;
+}
+.featured-det{
+  display: flex;
+ padding-right: 150px;
+  justify-content: space-between;
+}
+.ex-more{
+display: flex;
+margin-right: 20px;
+border: hsl(33, 31%, 36%,0.1) 1px solid;
+border-radius: 20px;
+padding: 5px 15px;
+padding-right: 20px;
+align-content: center;
+justify-items: center;
+text-align: center;
+background-color: #EFE4C4;
+
+color: #7A6040;
+}
+.ex-more:hover{
+ background-color:hsl(33, 31%, 36%,0.1);
+}
+.ex-more-svg{
+  position: relative;
+  top: 2px;
+  margin-right: 3px;
 }
 .places{
   margin: 30px;
@@ -160,6 +272,83 @@ padding-bottom:0px ;
 .card:hover {
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(27, 79, 107, 0.12);
+}
+.trip-section{
+   padding: 50px 130px;
+}
+.trip-section-cont{
+  margin: 10px 20px;
+  background-color: #154159;
+  padding: 60px 90px;
+  border: #154159 1px solid;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+}
+.img-gen {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+.img-gen img {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  object-position: right center;
+  opacity: 0.08;
+  pointer-events: none;
+}
+.home-trip{
+color: #C9A84C;
+letter-spacing: 2.9px;
+font: 12px "Karla", ui-sans-serif, system-ui, sans-serif;;
+font-weight: 405;
+}
+.trip-section-svg{
+  position: relative;
+  top: 5px;
+  margin-right: 5px;
+}
+.home-trip-tit{
+  color: #FDF8EE;
+  font: 47px   Cormorant Garamond, ui-serif, Georgia, serif;
+  margin: 10px;
+}
+.trip-section-det{
+  width: 50%;
+ margin-left: 10px;
+  color:#EFE4C4;
+  font: 1em "Karla", ui-sans-serif, system-ui, sans-serif;
+  margin: 10px;
+}
+.tripsec-btn{
+  margin-top: 40px;
+  background:oklch(69.141% 0.12129 81.006);
+  color:#3A2A1A;
+  transition: background 0.2s ease;
+  text-align: center;
+  align-content: center;
+  border: transparent 1px solid;
+  font: 15px "Karla", ui-sans-serif, system-ui, sans-serif;
+  padding: 5px 10px;
+  width: 200px;
+  border-radius: 10px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gen-svg{
+  position: relative;
+  top: 2px;
+  margin-left: 2px;
+}
+.tripsec-btn:hover{
+   border: oklch(73.86% 0.13492 80.564) 1px solid;
+  background-color:oklch(73.86% 0.13492 80.564) ;
 }
 .w{
   padding: 50px;
