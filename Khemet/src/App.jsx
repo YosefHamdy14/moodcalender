@@ -1,10 +1,13 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { AuthProvider } from "./context/AuthProvider";
 import Layout from "./components/Layout";
-import ProtectRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import Map from "./pages/Map";
+import Feed from "./pages/Feed";
+import TripPlanner from "./pages/TripPlanner";
+import Profile from "./pages/Profile";
 import Login from "./pages/Login";
-import Search from "./pages/Search";
 import Signup from "./pages/Signup";
 import "./App.css"
 
@@ -22,16 +25,26 @@ function App() {
 
             <Route path="login" element={<Login />} />
             <Route path="signup" element={<Signup />} />
-            
-
+            <Route path="map" element={<Map />} />
+            <Route path="feed" element={<Feed />} />
+  
             <Route
-              path="search"
+              path="trip-plan"
               element={
-                <ProtectRoute>
-                  <Search />
-                </ProtectRoute>
+                <ProtectedRoute>
+                  <TripPlanner />
+                </ProtectedRoute>
               }
             />
+            <Route
+              path="profile"
+              element={
+                <ProtectedRoute>
+                  <Profile />
+                </ProtectedRoute>
+              }
+            />
+            
 
           </Route>
 
