@@ -1,6 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useContext } from "react";
+import logo from"../assets/logo.png"
 
 function Navbar() {
   const { user, logout } = useAuth();
@@ -17,7 +18,7 @@ function Navbar() {
     <nav className="nav">
 
       <Link to="/" className="logo">
-        <img src="/assets/logo.png" alt="logo" width="40" height="50" />
+        <img src={logo} alt="logo" width="40" height="50" />
         <p>KHEMET</p>
       </Link>
 

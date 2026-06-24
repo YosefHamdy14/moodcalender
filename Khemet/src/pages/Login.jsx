@@ -57,6 +57,7 @@ export default function Login() {
   };
 
   return (
+    <main className="main-login">
     <div className="LogIn container active" id="login">
       <form className="Log" onSubmit={handleLogin}>
         <h2>Welcome Back</h2>
@@ -103,6 +104,7 @@ export default function Login() {
           </h3>
         </div>
       </div>
-    </div>
+      </div>
+      </main>
   );
 }

@@ -1,20 +1,26 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
 
-body {
+.home {
   font-family: 'DM Sans', sans-serif;
   min-height: 100vh;
   background: #F5EDD7;
-}
-main{
   width: 100%;
-   padding-bottom:0px;
-   padding-top: 68px;
-}
+  padding-top: 65px;
 
+}
+#root{
+    width: 100%;
+    background: #F5EDD7;
+    font-family: 'DM Sans', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
 .hero{
   position: relative;
   height: 600px;
+  background: url('./assets/Hero.png') no-repeat center center/cover;
+  width: 100%;
 }
 .h{
   height: 600px;
@@ -181,9 +187,10 @@ main{
 border: #FDF8EE 1px solid;
 border-radius: 10px;
 background-color:#FDF8EE ;
-height: 180px;
+height: 195px;
 margin: 10px;
 width: 350px;
+padding: 5px;
 }
 .sv{
   display: flex;
@@ -192,14 +199,19 @@ width: 350px;
    justify-content: center;
    justify-items: center;
    padding: 5px;
+   margin-top: 7px;
   
 }
-.why svg{
+.svg{
   background-color: hsl(43, 60%, 77%,0.5);
   border-radius: 50%;
-  width: fit-content;
+  width: 50px;
   height: 50px;
-  align-items: center;
+  display: flex;
+   align-items: center;
+   align-content: center;
+   justify-content: center;
+   justify-items: center;
 }
 .why h4{
   text-align: center;

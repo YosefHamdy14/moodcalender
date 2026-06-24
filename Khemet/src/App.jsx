@@ -6,6 +6,7 @@ import Home from "./pages/Home";
 import Login from "./pages/Login";
 import Search from "./pages/Search";
 import Signup from "./pages/Signup";
+import "./App.css"
 
 function App() {
   return (

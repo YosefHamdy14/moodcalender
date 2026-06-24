@@ -54,6 +54,7 @@ export default function Signup() {
   };
 
   return (
+    <main className="signup-main">
     <div className="Signup container" id="sign">
 
       {/* Image side */}
@@ -132,6 +133,7 @@ export default function Signup() {
         </div>
       </div>
 
-    </div>
+      </div>
+      </main>
   );
 }

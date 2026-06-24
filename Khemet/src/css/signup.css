@@ -31,7 +31,7 @@ body {
     radial-gradient(ellipse 55% 40% at 90% 0%,   #1B4F6B 0%, transparent 55%);
 }
 
-main {
+.signup-main{
   padding: 40px 24px;
   padding-bottom: 100px;
 }

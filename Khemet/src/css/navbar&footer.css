@@ -23,7 +23,7 @@ header{
   z-index: 100;
   background: linear-gradient(135deg, #0A1F35 0%, #1B4F6B 100%);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid #C9A84C;
+  border-bottom: 0.1px solid hsl(44, 54%, 54%,0.5);
   padding: 0 1rem;
   height: 68px;
   display: flex;
@@ -65,7 +65,7 @@ header{
 }
 
 .links a:hover { 
-color: #C9A84C;
+color: #e3be56;
 }
 
 .logs {
@@ -115,6 +115,7 @@ border: 1px solid #1B4F6B;
     border: hsl(44, 54%, 54%,0.2) solid 0.3px;
     border-radius:30px;
     padding: 3px 20px;
+    margin: 0px 5px;
 }
 .loginbtn:hover{
      border: hsl(44, 54%, 54%,0.7) solid 0.3px;
@@ -122,14 +123,16 @@ border: 1px solid #1B4F6B;
 .signup{
     color: #133e54;
     border: hsl(45, 57%, 85%,0.4) 0.5px solid;
-    background-color:#C9A84C;
+    background-color:#e3be56;
      padding: 3px 30px;
      border-radius: 30px;
+      margin-left: 7px;
+      
 }
 .signup:hover{
-    border: hsl(45, 57%, 85%,0.7) 0.5px solid;
+    border: #C9A84C 0.5px solid;
    box-shadow: #C9A84C 0.5px 1px 5px;
-   background-color: #af9241;
+   background-color: #e5c261;
 }
 .profile{
     display: flex;
@@ -204,8 +207,3 @@ hr{
   color: #7A6040;
 }
 
-/* ── Layout spacing ── */
-main {
-  padding-top: 88px;   /* 68px navbar + 20px breathing room */
-  min-height: calc(100vh - 68px);
-}
