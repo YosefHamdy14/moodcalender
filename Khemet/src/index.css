@@ -222,8 +222,6 @@ border: 1px solid #C9A84C;
   margin: 10px;
   margin-left: 0px;
 }
-
-
 .featured{
   padding: 50px 130px;
 }
@@ -299,11 +297,11 @@ color: #7A6040;
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(27, 79, 107, 0.12);
 }
+
 .trip-section{
    padding: 50px 130px;
    margin-bottom: 50px;
 }
-
 .trip-section-cont{
   margin: 10px 20px;
   background-color: #154159;
