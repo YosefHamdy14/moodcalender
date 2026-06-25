@@ -9,6 +9,7 @@ import TripPlanner from "./pages/TripPlanner";
 import Profile from "./pages/Profile";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
+import PlaceDetails from "./pages/PlaceDetails";
 import About from "./pages/About";
 import Contributions from "./pages/Contributions";
 import SavedTrips from "./pages/Savedtrips";
@@ -67,6 +68,11 @@ function App() {
                <Favorites/>
                </ProtectedRoute>
              } />
+             <Route path="place/:id" element={
+              <ProtectedRoute>
+              <PlaceDetails />
+              </ProtectedRoute>
+              } />
             
 
           </Route>
