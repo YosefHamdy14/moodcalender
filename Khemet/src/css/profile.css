@@ -1,0 +1,132 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+.profile-main {
+  padding: 150px;
+  padding-top: 130px;
+}
+
+.profile-hero{
+    background-color: #1B4F6B;
+    padding: 25px;
+    border: #1B4F6B 1px solid;
+    border-radius: 25px;
+}
+.profile-hero-cont{
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    padding: 15px;
+}
+.profile-data{
+    display: flex;
+    align-items: center;
+  gap: 20px;
+   
+}
+.profile-pic{
+    width: 120px;
+    height: 120px;
+    border: 1px solid #C9A84C;
+    border-radius:100% ;
+    box-shadow: #C9A84C 0.5px 0.5px 15px;
+}
+.placeholder-pic{
+    background-color: #C9A84C;
+    width: 120px;
+    height: 120px;
+    border: 1px solid #C9A84C;
+    border-radius:100% ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.placeholder-pic-svg{
+ position: relative;
+ right: -15px;   
+}
+
+.profile-hero-type{
+    color: #C9A84C;
+    font-size: 13px;
+    letter-spacing: 3px;
+     position: relative;
+     top: 10px;
+     padding-left: 5px;
+}
+.profile-hero-name{
+   color: #FDF8EE; 
+   font-size: 55px;
+   font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+}
+.profile-hero-email{
+    display: flex;
+    color: #F5EDD7 ;
+    font-size:14px ; 
+    position: relative;
+    top: -10px;
+    font-family: "Karla", ui-sans-serif, system-ui, sans-serif;;
+}
+.hero-email-svg{
+  margin-right: 5px; 
+  position: relative;
+  top: 3px; 
+}
+.profile-hero-btns{
+    display: inline-flex;
+    gap: 15px;
+    align-content: center;
+    align-self: center;
+}
+.profile-hero-btns-gen{
+  background:oklch(69.141% 0.12129 81.006);
+  color:#3A2A1A;
+  padding: 7px 12px;
+  box-shadow:oklch(69.141% 0.12129 81.006) 0.2px 0.2px 7px ;
+  transition: background 0.2s ease;
+  text-align: center;
+  align-content: center;
+  border: transparent 1px solid;
+  font: 13px "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  font-weight: 400;
+}
+.profile-hero-btns-gen:hover{
+     border: oklch(73.86% 0.13492 80.564) 1px solid;
+    background-color:oklch(73.86% 0.13492 80.564) ;
+
+}
+.create-svg{
+    position: relative;
+    top: -1px;
+}
+.profile-hero-btns-add{
+ text-align: center;
+  align-content: center;
+   padding: 7px 12px;
+    transition: background 0.2s ease;
+    font: 13px "Karla", ui-sans-serif, system-ui, sans-serif;
+  border-radius: 10px;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: fit-content;
+  color: #FDF8EE;
+  background-color: hsl(40, 79%, 96%,0.1);
+  border: #FDF8EE 1px solid;
+}
+
+.profile-hero-btns-add:hover{
+     background-color: hsl(40, 79%, 96%,0.3);
+}
+.pf-hero-add-svg{
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 5px;
+}
+
+
