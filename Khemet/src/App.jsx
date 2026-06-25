@@ -12,7 +12,9 @@ import Signup from "./pages/Signup";
 import About from "./pages/About";
 import Contributions from "./pages/Contributions";
 import SavedTrips from "./pages/Savedtrips";
+import Favorites from "./pages/Favorites";
 import "./App.css"
+
 
 function App() {
   return (
