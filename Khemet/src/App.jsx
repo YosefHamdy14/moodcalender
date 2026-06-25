@@ -14,6 +14,7 @@ import About from "./pages/About";
 import Contributions from "./pages/Contributions";
 import SavedTrips from "./pages/Savedtrips";
 import Favorites from "./pages/Favorites";
+import AddPlace from "./pages/AddPlace";
 import "./App.css"
 
 
@@ -66,6 +67,11 @@ function App() {
             <Route path="favorites" element={
               <ProtectedRoute>
                <Favorites/>
+               </ProtectedRoute>
+             } />
+            <Route path="addplace" element={
+              <ProtectedRoute>
+               <AddPlace/>
                </ProtectedRoute>
              } />
              <Route path="place/:id" element={
