@@ -14,8 +14,13 @@ export default function Home() {
   const [featuredPlaces, setFeaturedPlaces] = useState([]);
 
   useEffect(() => {
-    setFeaturedPlaces(placesData.slice(0, 3));
-  }, []);
+  const sortedPlaces = [...placesData].sort((a, b) => {
+    if (b.rating !== a.rating) {
+      return b.rating - a.rating;
+    }    return b.reviews - a.reviews;
+  });
+  setFeaturedPlaces(sortedPlaces.slice(0, 3));
+}, []);
 
   return (
     <main className="home">
