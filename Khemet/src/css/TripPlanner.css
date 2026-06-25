@@ -95,7 +95,7 @@
   height: 42px;
   border-radius: 10px;
   border: 1px solid #e3d7bd;
-  background: #FDF8EE;
+  background: #fbf4e8;
   padding-left: 14px;
   font-size: 15px;
 }
@@ -141,7 +141,7 @@
 }
 
 .interest-card {
-  background: #FDF8EE;
+  background: #fbf4e8;
   border: 1px solid #e3d7bd;
   border-radius: 14px;
   padding: 12px 14px;
@@ -199,7 +199,7 @@
 }
 
 .plan-card {
-  background: #FDF8EE;
+  background: #fbf4e8;
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 25px rgba(0,0,0,.08);
@@ -234,7 +234,7 @@
   border: none;
   border-radius: 10px;
   background: #234d67;
-  color: white;
+  color: #fef5e3;
   cursor: pointer;
   font-size: 13px;
 }
