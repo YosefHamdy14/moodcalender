@@ -151,7 +151,29 @@ function TripPlanner() {
 
       <div className="generator-card">
         <div className="generator-top">
-          <small>STEP 1 — GENERATE</small>
+          <div className="title-row">
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <circle
+      cx="12"
+      cy="12"
+      r="9"
+      stroke="#C9A84C"
+      strokeWidth="2"
+    />
+    <path
+      d="M15.5 8.5L13.5 13.5L8.5 15.5L10.5 10.5L15.5 8.5Z"
+      fill="#C9A84C"
+    />
+  </svg>
+
+  <small>STEP 1 — GENERATE</small>
+</div>
+          
           <h2>Trip generator</h2>
         </div>
 
@@ -243,8 +265,34 @@ function TripPlanner() {
       </div>
 
       {plans.length > 0 && (
-        <div className="plans-container">
-          {plans.map((plan, index) => (
+  <>
+    <div className="plans-header">
+      <div className="plans-step">
+        <svg
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+        >
+          <path
+            d="M12 2L13.8 8.2L20 10L13.8 11.8L12 18L10.2 11.8L4 10L10.2 8.2L12 2Z"
+            fill="#C9A84C"
+          />
+        </svg>
+
+        <span>STEP 2 — CHOOSE A PLAN</span>
+      </div>
+
+      <h2>Three itineraries for you</h2>
+
+      <p>
+        Three distinct ways to spend your {days} days.
+        Preview each, then select one to edit.
+      </p>
+    </div>
+
+    <div className="plans-container">
+      {plans.map((plan, index) => (
             <div
               key={index}
               className="plan-card"
@@ -319,8 +367,9 @@ function TripPlanner() {
               </div>
             </div>
           ))}
-        </div>
-      )}
+                </div>
+      </>
+    )}
     </div>
   );
 }
