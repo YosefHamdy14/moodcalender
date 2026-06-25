@@ -106,6 +106,7 @@ export default function Home() {
               <h3 className="search-home-card-tit">History</h3>
               <p className="search-home-card-p">Pyramids, temples and tombs</p>
             </div>
+          </div>
             <div className="tag-card">
                 <svg
   className="line-svg search-home-line "
@@ -167,6 +168,37 @@ export default function Home() {
               </div>
               </div>
             <div className="tag-card">
+                <svg
+  className="line-svg search-home-line "
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  width="64"
+  height="64"
+  viewBox="0 0 290.658 290.658"
+  fill="#C9A84C"
+  stroke="#C9A84C"
+  strokeWidth="6.685134"
+>
+  <g strokeWidth="0"></g>
+
+  <g
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  ></g>
+
+  <g>
+    <g>
+      <rect
+       className="search-home-line-rect"
+        y="139.474"
+        width="230.658"
+        height="11.711"
+        fill="#C9A84C"
+      />
+    </g>
+  </g>
+              </svg>
+              <div className="search-home-card-data">
               <h3  className="search-home-card-tit">Culture</h3>
               <p className="search-home-card-p">Bazar, food and craft</p>
                 <svg
@@ -196,9 +228,65 @@ export default function Home() {
               </div>
               </div>
             <div className="tag-card">
+                <svg
+  className="line-svg search-home-line "
+  version="1.1"
+  xmlns="http://www.w3.org/2000/svg"
+  width="64"
+  height="64"
+  viewBox="0 0 290.658 290.658"
+  fill="#C9A84C"
+  stroke="#C9A84C"
+  strokeWidth="6.685134"
+>
+  <g strokeWidth="0"></g>
+
+  <g
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  ></g>
+
+  <g>
+    <g>
+      <rect
+       className="search-home-line-rect"
+        y="139.474"
+        width="230.658"
+        height="11.711"
+        fill="#C9A84C"
+      />
+    </g>
+  </g>
+              </svg>
+              <div className="search-home-card-data">
               <h3  className="search-home-card-tit">Nature</h3>
               <p className="search-home-card-p">Oases, coasts and seas</p>
-            </div>
+             <svg
+  className="search-home-arrow-svg"
+  width="24"
+  height="24"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <g strokeWidth="0"></g>
+
+  <g
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  ></g>
+
+  <g>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M12.2929 4.29289C12.6834 3.90237 13.3166 3.90237 13.7071 4.29289L20.7071 11.2929C21.0976 11.6834 21.0976 12.3166 20.7071 12.7071L13.7071 19.7071C13.3166 20.0976 12.6834 20.0976 12.2929 19.7071C11.9024 19.3166 11.9024 18.6834 12.2929 18.2929L17.5858 13H4C3.44772 13 3 12.5523 3 12C3 11.4477 3.44772 11 4 11H17.5858L12.2929 5.70711C11.9024 5.31658 11.9024 4.68342 12.2929 4.29289Z"
+      fill="#C9A84C"
+    />
+  </g>
+</svg>
+              </div>
+              </div>
           
           </div>
         </div>
