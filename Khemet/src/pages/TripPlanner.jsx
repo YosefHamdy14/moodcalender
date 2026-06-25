@@ -1,12 +1,24 @@
 import { useState } from "react";
 import places from "../places.json";
 import "../css/TripPlanner.css";
+import PlanCard from "../components/PlanCard";
+import TripPreviewModal from "../components/TripPreviewModal";
 
 function TripPlanner() {
   const [selectedInterests, setSelectedInterests] = useState([]);
   const [days, setDays] = useState(3);
   const [pace, setPace] = useState("Balanced");
   const [plans, setPlans] = useState([]);
+  const [showPreview, setShowPreview] =
+  useState(false);
+
+const [selectedPlan, setSelectedPlan] =
+  useState(null);
+
+  const handlePreview = (plan) => {
+  setSelectedPlan(plan);
+  setShowPreview(true);
+};
 
   const interests = [
   {
@@ -291,85 +303,29 @@ function TripPlanner() {
       </p>
     </div>
 
-    <div className="plans-container">
-      {plans.map((plan, index) => (
-            <div
-              key={index}
-              className="plan-card"
-            >
-              <div className="plan-image-wrapper">
-                <img
-                  src={
-                    plan.places[0]
-                      ?.coverImage
-                  }
-                  alt={plan.name}
-                />
-
-                <span className="plan-badge">
-                  {plan.name}
-                </span>
-              </div>
-
-              <div className="plan-content">
-                <h3 className="plan-title">
-                  {plan.name === "Plan A"
-                    ? "Balanced Egypt"
-                    : plan.name === "Plan B"
-                    ? "Adventure Trail"
-                    : "Relaxed Pilgrimage"}
-                </h3>
-
-                <p className="plan-subtitle">
-                  {days} Day Journey
-                </p>
-
-                <hr />
-
-                {buildItinerary(
-                  plan.places
-                ).map(
-                  (
-                    dayPlaces,
-                    dayIndex
-                  ) => (
-                    <div
-                      className="day-row"
-                      key={dayIndex}
-                    >
-                      <span className="day-number">
-                        {dayIndex + 1}
-                      </span>
-
-                      <span className="place-name">
-                        {dayPlaces
-                          .map(
-                            (place) =>
-                              place.title
-                          )
-                          .join(
-                            " • "
-                          )}
-                      </span>
-                    </div>
-                  )
-                )}
-
-                <div className="plan-buttons">
-                  <button className="preview-btn">
-                    Preview
-                  </button>
-
-                  <button className="select-btn">
-                    Select →
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-                </div>
+<div className="plans-container">
+  {plans.map((plan, index) => (
+    <PlanCard
+      key={index}
+      plan={plan}
+      days={days}
+      buildItinerary={buildItinerary}
+      onPreview={handlePreview}
+    />
+  ))}
+</div>
       </>
     )}
+
+    {showPreview && (
+  <TripPreviewModal
+    plan={selectedPlan}
+    buildItinerary={buildItinerary}
+    onClose={() =>
+      setShowPreview(false)
+    }
+  />
+)}
     </div>
   );
 }
