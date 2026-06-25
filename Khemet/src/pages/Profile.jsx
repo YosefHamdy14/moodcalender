@@ -1,8 +1,21 @@
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
+import { useState } from "react";
+
 export default function Profile() {
+
+
   return (
-    <div style={{ padding: "20px" }}>
-      <h1>Profile Page</h1>
-      <p>This page is working correctly 🚀</p>
-    </div>
+    <main className="profile-main" >
+      <div className="profile-hero">
+        <div className="profile-data">
+          <input className="profile-pic" type="image" src="" alt="" />
+          <p className="type">EXPLORER</p>
+          <p className="profile-name"></p>
+
+        </div>
+        
+       </div>
+    </main>
   );
 }
