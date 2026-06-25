@@ -68,6 +68,11 @@ function App() {
                <Favorites/>
                </ProtectedRoute>
              } />
+             <Route path="place/:id" element={
+              <ProtectedRoute>
+              <PlaceDetails />
+              </ProtectedRoute>
+              } />
             
 
           </Route>
