@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { useState, useRef } from "react";
 import Card from "../components/Card";
+import PlaceCard from "../components/AddPlaceCard";
 import '../css/profile.css'
 
 export default function Profile() {
@@ -483,7 +484,7 @@ export default function Profile() {
         {user.contributions
           .slice(-6)
           .map((place, i) => (
-            <Card key={place.id || i} place={place} />
+            <PlaceCard key={place.id || i} place={place} />
           ))}
               </div>
               </div>
