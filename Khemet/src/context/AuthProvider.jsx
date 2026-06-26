@@ -11,11 +11,15 @@ export function AuthProvider({ children }) {
     const stored = localStorage.getItem("user");
     return stored ? JSON.parse(stored) : null;
   });
+  
+    const [favorites, setFavorites] = useState([]);
 
   useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
-      setUser(JSON.parse(storedUser));
+      const parsed = JSON.parse(storedUser);
+      setUser(parsed);
+      setFavorites(parsed.favorites || []);
     }
   }, []);
 
@@ -26,22 +30,30 @@ export function AuthProvider({ children }) {
 
   const logout = () => {
     setUser(null);
+    setFavorites([]);
     localStorage.removeItem("user");
   };
 
-  const updateUser = (newData) => {
-    const updated = { ...user, ...newData };
-    const safeForStorage = {
+  const toggleFavorite = (place) => {
+    if (!user) return;
+    const exists = favorites.some((f) => f.id === place.id);
+    const updated = exists
+      ? favorites.filter((f) => f.id !== place.id)
+      : [...favorites, place];
+    setFavorites(updated);
+    const updatedUser = { ...user, ...newData, favorites: updated };
+    setUser(updatedUser);
+    localStorage.setItem("user", JSON.stringify(updatedUser));
+    };
+     const safeForStorage = {
       ...updated,
       contributions: (updated.contributions || []).map(stripImages),
     };
 
-    setUser(updated);  
-    localStorage.setItem("user", JSON.stringify(safeForStorage));  
-  };
+  const isFavorite = (id) => favorites.some((f) => f.id === id);
 
   return (
-    <AuthContext.Provider value={{ user, login, logout, updateUser }}>
+    <AuthContext.Provider value={{ user, login, logout, favorites, toggleFavorite, isFavorite ,updateUser}}>
       {children}
     </AuthContext.Provider>
   );

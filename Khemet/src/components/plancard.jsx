@@ -1,3 +1,4 @@
+import"../css/plancard.css"
 function PlanCard({
   plan,
   days,
