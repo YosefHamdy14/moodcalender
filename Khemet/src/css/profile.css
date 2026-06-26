@@ -741,9 +741,14 @@ background-color: hsl(201, 60%, 26%,0.2);
 }
 
 .pf-cards-grid .contrib-card-actions {
-  display: none;
+  display: flex;
+  justify-content: flex-start;
+  margin: 5px; 
 }
 
+.pf-cards-grid .contrib-card-actions-right {
+  display: none; 
+}
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE

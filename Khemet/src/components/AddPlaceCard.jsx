@@ -1,5 +1,8 @@
 import { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { getPlaceImages } from "./PicCache";
+import { useAuth } from "../context/AuthContext";
+import "../css/card.css";
 
 const CATEGORIES = [
   { id: "nature", title: "Nature" },
@@ -25,28 +28,41 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
   useEffect(() => {
     getPlaceImages(place.id).then(setImages);
   }, [place.id]);
+  
+   const { user, toggleFavorite, isFavorite } = useAuth();
+    const saved = isFavorite(place.id);
+  
+    const handleSave = (e) => {
+      e.preventDefault();
+      if (!user) return;
+      toggleFavorite(place);
+  };
+  
 
   return (
     <div className="contrib-card">
       {images.coverImage ? (
         <div className="contrib-card-thumb">
           <img src={images.coverImage} alt={place.title} />
+          <span className="contrib-card-category-overlay">{categoryLabel(place.category)}</span>
         </div>
       ) : (
         <div className="contrib-card-thumb contrib-card-thumb--empty">
           <span>✦</span>
+          <span className="contrib-card-category-overlay">{categoryLabel(place.category)}</span>
         </div>
       )}
-
       <div className="contrib-card-body">
         <div className="contrib-card-top">
           <div>
             <h4 className="contrib-card-name">{place.title}</h4>
             <p className="contrib-card-desc">{place.description}</p>
           </div>
-          {place.rating && (
-            <span className="contrib-card-rating">★ {place.rating}</span>
-          )}
+          <span className="contrib-card-rating">
+            <span className="stars">★</span>
+            <span>{place.rating || 4.5}</span>
+            <span className="reviews">({place.reviews || 0})</span>
+          </span>
         </div>
 
         <div className="contrib-card-meta">
@@ -77,8 +93,23 @@ export default function PlaceCard({ place, onEdit, onDelete }) {
         </div>
 
         <div className="contrib-card-actions">
-          <button className="contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
-          <button className="contrib-btn-delete" onClick={() => onDelete(place.id)}>Delete</button>
+          <span className="contrib-card-rating-footer">
+            <span className="stars">★</span>
+            <span>{place.rating || 4.5}</span>
+            <span className="reviews">({place.reviews || 0})</span>
+          </span>
+
+          <Link to={`/place/${place.id}`} className="card-btn">
+            View details →
+          </Link>
+
+          <div className="contrib-card-actions-right">
+            <button className="contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
+            <button className="contrib-btn-delete" onClick={() => onDelete(place.id)}>Delete</button>
+            <Link to={`/place/${place.id}`} className="card-btn">
+              View details →
+            </Link>
+          </div>
         </div>
       </div>
     </div>

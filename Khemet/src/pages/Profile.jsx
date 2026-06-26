@@ -485,7 +485,7 @@ export default function Profile() {
         </div>
         <div className="pf-cards-grid">
           {user.contributions.slice(-6).map((place, i) => (
-            <PlaceCard
+            <Card
               key={place.id || i}
               place={place}
               onEdit={() => {}}

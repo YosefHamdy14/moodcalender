@@ -1,10 +1,23 @@
 import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "../css/Card.css";
 import { useAuth } from "../context/AuthContext";
+import { getPlaceImages } from "../components/PicCache"; 
 
-function Card({ place }) {
+function Card({ place, onEdit }) {
   const { user, toggleFavorite, isFavorite } = useAuth();
   const saved = isFavorite(place.id);
+  const [coverImage, setCoverImage] = useState(place.coverImage);
+
+  useEffect(() => {
+    if (place.id > 50) {
+      getPlaceImages(place.id).then((cached) => {
+        if (cached?.coverImage) {
+          setCoverImage(cached.coverImage);
+        }
+      });
+    }
+  }, [place.id]);
 
   const handleSave = (e) => {
     e.preventDefault();
@@ -12,11 +25,10 @@ function Card({ place }) {
     toggleFavorite(place);
   };
 
-
   return (
     <div className="card">
       <div className="card-image">
-        <img src={place.coverImage} alt={place.title} />
+        <img src={coverImage} alt={place.title} />
         <span className="card-category">{place.category || place.tags?.[0] || "Explore"}</span>
         <button
           className={`saved-btn ${saved ? "saved-btn--active" : ""}`}
@@ -49,9 +61,14 @@ function Card({ place }) {
             <span>{place.rating || 4.5}</span>
             <span className="reviews">({place.reviews || 0})</span>
           </div>
-          <Link to={`/place/${place.id}`} className="card-btn">
-            View details →
-          </Link>
+          <div className="contrib-card-actions-right">
+            {onEdit && (
+              <button className="contrib-btn-edit" onClick={() => onEdit(place)}>Edit</button>
+            )}
+            <Link to={`/place/${place.id}`} className="card-btn">
+              View details →
+            </Link>
+          </div>
         </div>
       </div>
     </div>

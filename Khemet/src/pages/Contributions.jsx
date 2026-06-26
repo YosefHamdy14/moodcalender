@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { deletePlaceImages, getPlaceImages } from "../components/PicCache";
 import PlaceCard from "../components/AddPlaceCard";
+import Toast from "../components/toast";
 import "../css/contribution.css";
 
 const CATEGORIES = [
@@ -37,6 +38,12 @@ export default function Contributions() {
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState("");
   const [deleteConfirm, setDeleteConfirm] = useState(null); 
+  const [toast, setToast] = useState({ visible: false, type: "success" });
+
+const showToast = (type) => {
+  setToast({ visible: true, type });
+  setTimeout(() => setToast({ visible: false, type }), 3000);
+};
 
   /* ── open edit popup ── */
   const openEdit = (place) => {
@@ -139,6 +146,7 @@ export default function Contributions() {
     const updatedContributions = contributions.map((p) =>
       p.id === editTarget.id ? { ...p, ...form } : p
     );
+    showToast("update");
     updateUser({ contributions: updatedContributions });
     closeEdit();
   };
@@ -146,7 +154,8 @@ export default function Contributions() {
   /* ── delete ── */
  const handleDelete = async (id) => {
   await deletePlaceImages(id);
-  updateUser({ contributions: contributions.filter((p) => p.id !== id) });
+   updateUser({ contributions: contributions.filter((p) => p.id !== id) });
+   showToast("delete");
   setDeleteConfirm(null);
 };
 
@@ -156,6 +165,11 @@ export default function Contributions() {
 
   return (
     <main className="contributions-main">
+       <Toast
+  message={toast.type === "delete" ? "Place deleted successfully" : "Place edited successfully"}
+  visible={toast.visible}
+  type={toast.type}
+/>
       <div className="contributions-page">
         {/* ── header ── */}
         <p className="contributions-eyebrow">YOUR DISCOVERED GEMS</p>

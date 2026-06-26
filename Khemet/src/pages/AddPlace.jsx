@@ -4,8 +4,10 @@ import { useAuth } from "../context/AuthContext";
 import { MapContainer, TileLayer, Marker, useMapEvents } from "react-leaflet";
 import { setPlaceImages } from "../components/PicCache"
 import L from "leaflet";
+import Toast from "../components/toast";
 import "leaflet/dist/leaflet.css";
 import "../css/addplace.css"
+
 import placesData from "../places.json";
 
 delete L.Icon.Default.prototype._getIconUrl;
@@ -73,7 +75,6 @@ function getNextId(storedPlaces) {
 
 export function addReviewToPlace(place, { rating, text, author } = {}) {
   const existingReviews = place.reviewsList || [];
-
   const parsedRating = parseFloat(rating);
   const hasRating = rating !== "" && rating !== null && rating !== undefined && !Number.isNaN(parsedRating);
   const hasText = !!text && text.trim().length > 0;
@@ -111,18 +112,6 @@ function MapClickHandler({ onLocationSelect }) {
     },
   });
   return null;
-}
-
-// ── Toast component ───────────────────────────────────────
-function Toast({ message, visible }) {
-  return (
-    <div className={`add-toast ${visible ? "add-toast-visible" : ""}`}>
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 6L9 17l-5-5" />
-      </svg>
-      {message}
-    </div>
-  );
 }
 
 export default function AddPlace() {
