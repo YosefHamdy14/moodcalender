@@ -1,6 +1,6 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import Card from "../components/Card";
 import '../css/profile.css'
 
@@ -19,6 +19,25 @@ export default function Profile() {
   const handleChange = (e) => {
   setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
+  const fileInputRef = useRef(null);
+
+  const handlePicChange = (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+    
+    if (file.size > 2 * 1024 * 1024) {
+      alert("Image must be under 2MB");
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onloadend = () => {
+      updateUser({ profilePic: reader.result });
+    };
+    reader.readAsDataURL(file);
+  };
+
   const handleSave = () => {
     updateUser(formData);
     setShowEditModal(false);
@@ -36,22 +55,39 @@ export default function Profile() {
       <div className="profile-hero">
         <div className="profile-hero-cont">
         <div className="profile-data">
-            <div className="profile-pic">
-            {user.profilePic ? (
-              <img src={user.profilePic} alt="profile" />
-            ) : (
-                  <div className="placeholder-pic"><svg
-                    className="placeholder-pic-svg"
-                  width="100"
-                  height="100"
-                  viewBox="120 1990 40 40"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="#3A2A1A"
-                >
-                  <path d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298" />
-                </svg></div>
-            )}
-            </div>
+          <div className="profile-pic-wrapper" onClick={() => fileInputRef.current.click()}>
+  {user.profilePic ? (
+    <img className="profile-pic" src={user.profilePic} alt="profile" />
+  ) : (
+    <div className="placeholder-pic">
+      <svg
+        className="placeholder-pic-svg"
+        width="100"
+        height="100"
+        viewBox="120 1990 40 40"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="#3A2A1A"
+      >
+        <path d="M134,2008.99998 C131.783496,2008.99998 129.980955,2007.20598 129.980955,2004.99998 C129.980955,2002.79398 131.783496,2000.99998 134,2000.99998 C136.216504,2000.99998 138.019045,2002.79398 138.019045,2004.99998 C138.019045,2007.20598 136.216504,2008.99998 134,2008.99998 M137.775893,2009.67298 C139.370449,2008.39598 140.299854,2006.33098 139.958235,2004.06998 C139.561354,2001.44698 137.368965,1999.34798 134.722423,1999.04198 C131.070116,1998.61898 127.971432,2001.44898 127.971432,2004.99998 C127.971432,2006.88998 128.851603,2008.57398 130.224107,2009.67298 C126.852128,2010.93398 124.390463,2013.89498 124.004634,2017.89098 C123.948368,2018.48198 124.411563,2018.99998 125.008391,2018.99998 C125.519814,2018.99998 125.955881,2018.61598 126.001095,2018.10898 C126.404004,2013.64598 129.837274,2010.99998 134,2010.99998 C138.162726,2010.99998 141.595996,2013.64598 141.998905,2018.10898 C142.044119,2018.61598 142.480186,2018.99998 142.991609,2018.99998 C143.588437,2018.99998 144.051632,2018.48198 143.995366,2017.89098 C143.609537,2013.89498 141.147872,2010.93398 137.775893,2009.67298" />
+      </svg>
+    </div>
+  )}
+
+  <div className="profile-pic-overlay">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 20h9M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z" stroke="#FDF8EE" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+    </svg>
+    <span>Edit</span>
+  </div>
+
+  <input
+    ref={fileInputRef}
+    type="file"
+    accept="image/*"
+    style={{ display: "none" }}
+    onChange={handlePicChange}
+  />
+</div>
           <div className="profile-hero-personal">
           <p className="profile-hero-type">EXPLORER</p>
           <p className="profile-hero-name"> {user.name}</p>
@@ -242,7 +278,7 @@ export default function Profile() {
               <div className="info-sec">
                 <h3 className="info-sec-tit">About</h3>
                 <p className="about-sec-p">
-                  {user.bio}
+                   {user?.bio || "Tell people about yourself..."}
                 </p>
               </div>
               <div className="info-sec">
@@ -255,7 +291,7 @@ export default function Profile() {
                   
                   <li className="info-det"><span className="info-det-title">EMAIL</span>{ user.email}</li>
                   
-                  <li className="info-det"><span className="info-det-title">HOME BASE</span>{ user.location}</li>
+                  <li className="info-det"><span className="info-det-title">HOME BASE</span>{user?.location || "Add your location"}</li>
                   
                   <li className="info-det"><span className="info-det-title">MEMBER SINCE</span>{formatDate(user.createdAt)}</li>
                   
@@ -326,14 +362,22 @@ export default function Profile() {
           </div>
         )}
           </div>}
-  {activeTab === "places" && (
-    <div className="pf-content-section">
-        {user.favorites?.length > 0 ? (
-            <div className="pf-cards-grid">
-                {user.favorites.map((place, i) => (
-                    <Card key={place.id || i} place={place} />
-                ))}
-            </div>
+      {activeTab === "places" && (
+          <div className="pf-content-section">
+            {user.favorites?.length > 0 ? (
+              <div className="pf-content-section-container" >
+                  <div className="pf-content-section-header" >
+                <h3 className="title-sect-saved">My Saved Places</h3>
+                <Link to="/favorites" className="fav-more">View All Saved Places</Link>
+                </div>
+                <div className="pf-cards-grid">
+                  {user.favorites
+                      .slice(-6)
+                      .map((place, i) => (
+                        <Card key={place.id || i} place={place} />
+                    ))}
+                  </div>
+                  </div>
         ) : (
             <div className="pf-empty-state">
                 <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -351,18 +395,66 @@ export default function Profile() {
     <div className="pf-content-section">
         {user.savedTrips?.length > 0 ? (
             <div className="pf-trips-grid">
-                {user.savedTrips.map((trip, i) => (
-                    <div key={i} className="pf-trip-card">
-                        <div className="pf-trip-card-head">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <path d="M19 19.2674V7.84496C19 5.64147 17.4253 3.74489 15.2391 3.31522C13.1006 2.89493 10.8994 2.89493 8.76089 3.31522C6.57467 3.74489 5 5.64147 5 7.84496V19.2674C5 20.6038 6.46752 21.4355 7.63416 20.7604L10.8211 18.9159C11.5492 18.4945 12.4508 18.4945 13.1789 18.9159L16.3658 20.7604C17.5325 21.4355 19 20.6038 19 19.2674Z" stroke="#C9A84C" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg>
-                            <span className="pf-trip-card-title">{trip.title || `Trip ${i + 1}`}</span>
-                        </div>
-                        <p className="pf-trip-card-sub">{trip.destination || "—"}</p>
-                        <p className="pf-trip-card-date">{formatDate(trip.createdAt)}</p>
-                    </div>
-                ))}
+                {user?.savedTrips?.slice(0, 6).map((trip, i) => {
+  const title = trip.title || `Trip ${i + 1}`;
+  const places = trip.places || [];
+
+  const destination =
+    places.length > 0
+      ? places
+          .filter((p) => p?.title)
+          .map((p) => p.title)
+          .join(" • ")
+      : trip.destination || "—";
+
+  const image =
+    places[0]?.coverImage || "/assets/placeholder.jpg";
+
+  return (
+    <div
+      key={trip.id || i}
+      className="pf-trip-card"
+      onClick={() => onPreview?.(trip)} 
+      style={{ cursor: "pointer" }}
+    >
+      
+     
+      <div className="pf-trip-card-image">
+        <img src={image} alt={title} />
+      </div>
+
+      <div className="pf-trip-card-head">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M19 19.2674V7.84496C19 5.64147 17.4253 3.74489 15.2391 3.31522C13.1006 2.89493 10.8994 2.89493 8.76089 3.31522C6.57467 3.74489 5 5.64147 5 7.84496V19.2674C5 20.6038 6.46752 21.4355 7.63416 20.7604L10.8211 18.9159C11.5492 18.4945 12.4508 18.4945 13.1789 18.9159L16.3658 20.7604C17.5325 21.4355 19 20.6038 19 19.2674Z"
+            stroke="#C9A84C"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+
+        <span className="pf-trip-card-title">
+          {title}
+        </span>
+      </div>
+
+      <p className="pf-trip-card-sub">
+        {destination}
+      </p>
+
+      <p className="pf-trip-card-date">
+        {trip.createdAt
+          ? formatDate(new Date(trip.createdAt))
+          : "Recently added"}
+      </p>
+      <div className="pf-trip-card-actions"> 
+        <button className="edit-btn">Edit</button>
+
+      </div>
+    </div>
+  );
+})}
             </div>
         ) : (
             <div className="pf-empty-state">
@@ -379,22 +471,40 @@ export default function Profile() {
 
 {activeTab === "contributions" && (
     <div className="pf-content-section">
-        {user.contributions?.length > 0 ? (
-            <div className="pf-cards-grid">
-                {user.contributions.map((place, i) => (
-                    <Card key={place.id || i} place={place} />
-                ))}
-            </div>
-        ) : (
-            <div className="pf-empty-state">
-                <svg width="48" height="48" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M19.186 2.09c.521.25 1.136.612 1.625 1.101.49.49.852 1.104 1.1 1.625.313.654.11 1.408-.401 1.92l-7.214 7.213c-.31.31-.688.541-1.105.675l-4.222 1.353a.75.75 0 0 1-.943-.944l1.353-4.221a2.75 2.75 0 0 1 .674-1.105l7.214-7.214c.512-.512 1.266-.714 1.92-.402zm.211 2.516a3.608 3.608 0 0 0-.828-.586l-6.994 6.994a1.002 1.002 0 0 0-.178.241L9.9 14.102l2.846-1.496c.09-.047.171-.107.242-.178l6.994-6.994a3.61 3.61 0 0 0-.586-.828zM4.999 5.5A.5.5 0 0 1 5.47 5l5.53.005a1 1 0 0 0 0-2L5.5 3A2.5 2.5 0 0 0 3 5.5v12.577c0 .76.082 1.185.319 1.627.224.419.558.754.977.978.442.236.866.318 1.627.318h12.154c.76 0 1.185-.082 1.627-.318.42-.224.754-.559.978-.978.236-.442.318-.866.318-1.627V13a1 1 0 1 0-2 0v5.077c0 .459-.021.571-.082.684a.364.364 0 0 1-.157.157c-.113.06-.225.082-.684.082H5.923c-.459 0-.57-.022-.684-.082a.363.363 0 0 1-.157-.157c-.06-.113-.082-.225-.082-.684V5.5z" fill="#C9A84C" opacity="0.3"/>
-                </svg>
-                <p className="pf-empty-title">No contributions yet</p>
-                <p className="pf-empty-sub">Add places to help other explorers discover Egypt</p>
-                <Link to="/addplace" className="pf-empty-btn">Add a Place</Link>
-            </div>
-        )}
+       {user?.contributions?.length > 0 ? (<div className="pf-content-section-container">
+        <div className="pf-content-section-header" >
+                <h3 className="title-sect-saved">My Contributions</h3>
+                <div className="cont-btns">
+                <Link to="/contributions" className="fav-more">Manage All</Link>
+                <Link className="profile-btns-add" to="/addplace"> <span className="pf-hero-add-svg">+</span>Add a place</Link>
+                </div>
+                </div>
+        <div className="pf-cards-grid">
+        {user.contributions
+          .slice(-6)
+          .map((place, i) => (
+            <Card key={place.id || i} place={place} />
+          ))}
+              </div>
+              </div>
+) : (
+  <div className="pf-empty-state">
+    <svg width="48" height="48" viewBox="0 0 24 24" fill="none">
+      <path
+        fillRule="evenodd"
+        clipRule="evenodd"
+        d="M19.186 2.09c.521.25 1.136.612 1.625 1.101.49.49.852 1.104 1.1 1.625.313.654.11 1.408-.401 1.92l-7.214 7.213c-.31.31-.688.541-1.105.675l-4.222 1.353a.75.75 0 0 1-.943-.944l1.353-4.221a2.75 2.75 0 0 1 .674-1.105l7.214-7.214c.512-.512 1.266-.714 1.92-.402zm.211 2.516a3.608 3.608 0 0 0-.828-.586l-6.994 6.994a1.002 1.002 0 0 0-.178.241L9.9 14.102l2.846-1.496c.09-.047.171-.107.242-.178l6.994-6.994a3.61 3.61 0 0 0-.586-.828zM4.999 5.5A.5.5 0 0 1 5.47 5l5.53.005a1 1 0 0 0 0-2L5.5 3A2.5 2.5 0 0 0 3 5.5v12.577c0 .76.082 1.185.319 1.627.224.419.558.754.977.978.442.236.866.318 1.627.318h12.154c.76 0 1.185-.082 1.627-.318.42-.224.754-.559.978-.978.236-.442.318-.866.318-1.627V13a1 1 0 1 0-2 0v5.077c0 .459-.021.571-.082.684a.364.364 0 0 1-.157.157c-.113.06-.225.082-.684.082H5.923c-.459 0-.57-.022-.684-.082a.363.363 0 0 1-.157-.157c-.06-.113-.082-.225-.082-.684V5.5z"
+        fill="#C9A84C"
+        opacity="0.3"
+      />
+    </svg>
+    <p className="pf-empty-title">No contributions yet</p>
+    <p className="pf-empty-sub"> Add places to help other explorers discover Egypt</p>
+    <Link to="/addplace" className="pf-empty-btn">
+      Add a Place
+    </Link>
+  </div>
+)}
     </div>
 )}
 </div>

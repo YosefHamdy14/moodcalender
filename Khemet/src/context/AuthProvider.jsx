@@ -1,38 +1,48 @@
-import {useState,useEffect } from "react";
+import { useState, useEffect } from "react";
 import { AuthContext } from "./AuthContext";
 
+function stripImages(place) {
+  const { coverImage, gallery, ...rest } = place;
+  return rest;
+}
+
 export function AuthProvider({ children }) {
-    const [user, setUser] = useState(() => {
+  const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
     return stored ? JSON.parse(stored) : null;
-}); 
-    useEffect(() => {
+  });
+
+  useEffect(() => {
     const storedUser = localStorage.getItem("user");
     if (storedUser) {
       setUser(JSON.parse(storedUser));
-        }
-    }, []);
-    
-    const login = (userData) => {
-        setUser(userData);
-        localStorage.setItem("user", JSON.stringify(userData));
+    }
+  }, []);
+
+  const login = (userData) => {
+    setUser(userData);
+    localStorage.setItem("user", JSON.stringify(userData));
+  };
+
+  const logout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+  };
+
+  const updateUser = (newData) => {
+    const updated = { ...user, ...newData };
+    const safeForStorage = {
+      ...updated,
+      contributions: (updated.contributions || []).map(stripImages),
     };
 
+    setUser(updated);  
+    localStorage.setItem("user", JSON.stringify(safeForStorage));  
+  };
 
-    const logout = () => {
-        setUser(null);
-         localStorage.removeItem("user");
-    }
-
-    const updateUser = (newData) => {
-    const updated = { ...user, ...newData };
-    setUser(updated);
-    localStorage.setItem("user", JSON.stringify(updated));
-};
-
-    return (
-        <AuthContext.Provider value={{ user, login, logout,updateUser }}>
-        {children}
-        </AuthContext.Provider>
-    );
+  return (
+    <AuthContext.Provider value={{ user, login, logout, updateUser }}>
+      {children}
+    </AuthContext.Provider>
+  );
 }

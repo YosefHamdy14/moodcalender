@@ -45,12 +45,12 @@ html { scroll-behavior: smooth; }
   align-items: center;
   gap: 20px;
 }
-.profile-pic {
+.profile-pic-wrapper {
+  position: relative;
   width: 120px;
   height: 120px;
-  border: 1px solid #C9A84C;
   border-radius: 100%;
-  box-shadow: #C9A84C 0.1px 0.1px 10px;
+  cursor: pointer;
   flex-shrink: 0;
 }
 .placeholder-pic {
@@ -67,6 +67,67 @@ html { scroll-behavior: smooth; }
 .placeholder-pic-svg {
   position: relative;
   right: -15px;
+}
+
+.profile-pic-wrapper .profile-pic,
+.profile-pic-wrapper .placeholder-pic {
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+  transition: filter 0.25s ease;
+}
+
+
+.profile-pic {
+  width: 120px;
+  height: 120px;
+  border: 1px solid #C9A84C;
+  border-radius: 100%;
+  box-shadow: #C9A84C 0.1px 0.1px 10px;
+  object-fit: cover;
+  display: block;
+}
+
+.profile-pic-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 100%;
+  background-color: rgba(10, 31, 53, 0.55);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+  border: 1px solid #C9A84C;
+  box-shadow: #C9A84C 0.1px 0.1px 10px;
+}
+
+.profile-pic-overlay span {
+  color: #FDF8EE;
+  font-size: 11px;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: 2px;
+}
+
+.profile-pic-wrapper:hover .profile-pic-overlay {
+  opacity: 1;
+}
+
+.profile-pic-wrapper:hover .profile-pic,
+.profile-pic-wrapper:hover .placeholder-pic {
+  filter: brightness(0.75);
+}
+
+/* responsive adjustments */
+@media (max-width: 480px) {
+  .profile-pic-wrapper,
+  .profile-pic-wrapper .profile-pic,
+  .profile-pic-wrapper .placeholder-pic {
+    width: 90px;
+    height: 90px;
+  }
 }
 
 .profile-hero-type {
@@ -88,7 +149,7 @@ html { scroll-behavior: smooth; }
   color: #F5EDD7;
   font-size: 14px;
   position: relative;
-  top: -10px;
+  top: -1px;
   font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
   align-items: center;
 }
@@ -293,6 +354,7 @@ html { scroll-behavior: smooth; }
 /* ─── Tab Content ────────────────────────────────────────────── */
 .profile-content {
   animation: fadeUp 0.35s 0.05s ease both;
+  margin-top:10px ;
 }
 
 /* ─── Info Section ───────────────────────────────────────────── */
@@ -308,7 +370,7 @@ html { scroll-behavior: smooth; }
   background-color: #FDF8EE;
   border: hsl(33, 31%, 36%, 0.3) 0.1px solid;
   border-radius: 24px;
-  padding: 20px;
+  padding: 25px ;
   transition: box-shadow 0.25s ease;
 }
 .info-sec:hover {
@@ -324,6 +386,7 @@ html { scroll-behavior: smooth; }
   font-size: 14px;
   line-height: 1.6;
   margin-top: 8px;
+  padding: 10px 1px;
 }
 .info-sec-btn {
   display: flex;
@@ -331,7 +394,6 @@ html { scroll-behavior: smooth; }
   border: hsl(33, 31%, 36%, 0.1) 1px solid;
   border-radius: 20px;
   padding: 5px 15px;
-  padding-right: 20px;
   align-items: center;
   justify-items: center;
   text-align: center;
@@ -350,6 +412,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 10px;
 }
 .sec-details-cont {
   padding: 5px;
@@ -365,10 +428,18 @@ html { scroll-behavior: smooth; }
   color: #2A1A08;
   gap: 12px;
 }
+.info-det:last-child{
+    border-bottom: transparent.5px solid;
+    margin-bottom: 5px;
+}
 .info-det-title {
   color: #7A6040;
   flex-shrink: 0;
+  letter-spacing: 1px;
+   font-size: 11px;
 }
+
+
 
 /* ─── Edit Modal ─────────────────────────────────────────────── */
 .edit-modal-overlay {
@@ -583,12 +654,76 @@ html { scroll-behavior: smooth; }
 .pf-empty-btn:hover {
   background-color: oklch(73.86% 0.13492 80.564);
 }
+.pf-content-section-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 50px;
+}
+.fav-more{
+  display: flex;
+  margin-right: 20px;
+  border: hsl(33, 31%, 36%, 0.1) 1px solid;
+  border-radius: 20px;
+  padding: 5px 15px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background-color: #EFE4C4;
+  color: #7A6040;
+  height: 30px;
+  padding: 15px 30px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  align-self: center;
+  justify-self: right;
+}
+.fav-more:hover{
+  border: hsl(33, 31%, 36%, 0.3) 1px solid;
+  background-color: hsla(33, 31%, 36%, 0.1);
+}
+.profile-btns-add{
+  display: flex;
+  margin-right: 20px;
+  border: hsl(201, 60%, 26%,0.1) 1px solid;
+  border-radius: 20px;
+  padding: 5px 15px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  background-color: hsl(201, 60%, 26%,0.1);
+  color: #1B4F6B;
+  height: 30px;
+  padding: 15px 30px;
+  transition: background 0.2s ease;
+  cursor: pointer;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  align-self: center;
+  justify-self: right;
+}
+.profile-btns-add:hover{
+border: hsl(201, 60%, 26%,0.3) 1px solid;
+background-color: hsl(201, 60%, 26%,0.2);
+}
+.title-sect-saved{
+  color: #1B4F6B;
+  font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
+  font-size: 24px;
+}
+.cont-btns{
+  display: flex;
+}
+
 
 /* ══════════════════════════════════════════════════════════════
    RESPONSIVE
 ══════════════════════════════════════════════════════════════ */
 
-/* ─── Large laptops / small desktops (≤ 1280px) ─────────────── */
+
 @media (max-width: 1280px) {
   .profile-main {
     padding: 100px 80px;
@@ -599,7 +734,6 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ─── Tablets landscape (≤ 1024px) ──────────────────────────── */
 @media (max-width: 1024px) {
   .profile-main {
     padding: 80px 50px;
@@ -616,7 +750,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ─── Tablets portrait (≤ 768px) ────────────────────────────── */
+
 @media (max-width: 768px) {
   .profile-main {
     padding: 70px 24px;
@@ -665,7 +799,7 @@ html { scroll-behavior: smooth; }
   }
 }
 
-/* ─── Mobile (≤ 480px) ───────────────────────────────────────── */
+
 @media (max-width: 480px) {
   .profile-main {
     padding: 60px 16px;
