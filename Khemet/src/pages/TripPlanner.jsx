@@ -350,7 +350,7 @@ const saveTrip = () => {
     onClose={() =>setShowPreview(false) }
     onSelect={handleSelect}
   />
-  
+
 )}
 
 <div ref={organizerRef}>
