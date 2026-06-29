@@ -46,7 +46,7 @@ const showToast = (type) => {
   setTimeout(() => setToast({ visible: false, type }), 3000);
 };
 
-  /* ── open edit popup ── */
+
   const openEdit = (place) => {
     setEditTarget(place);
     setForm({
@@ -74,7 +74,7 @@ const showToast = (type) => {
     setErrors({});
   };
 
-  /* ── field change ── */
+ 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm((prev) => {
@@ -88,7 +88,7 @@ const showToast = (type) => {
   const availableCities =
     LOCATIONS.find((l) => l.governorate === form.governorate)?.cities || [];
 
-  /* ── tags ── */
+
   const handleTagKeyDown = (e) => {
     if (e.key === "Enter" || e.key === ",") {
       e.preventDefault();
@@ -102,7 +102,7 @@ const showToast = (type) => {
   const removeTag = (tag) =>
     setForm((prev) => ({ ...prev, tags: prev.tags.filter((t) => t !== tag) }));
 
-  /* ── location search ── */
+
   const handleLocationSearch = async () => {
     if (!searchQuery.trim()) return;
     setSearchLoading(true);
@@ -130,7 +130,7 @@ const showToast = (type) => {
     }
   };
 
-  /* ── validate & save ── */
+
   const validate = () => {
     const e = {};
     if (!form.title?.trim()) e.title = "Title is required";
@@ -152,7 +152,7 @@ const showToast = (type) => {
     closeEdit();
   };
 
-  /* ── delete ── */
+
  const handleDelete = async (id) => {
   await deletePlaceImages(id);
    updateUser({ contributions: contributions.filter((p) => p.id !== id) });
@@ -160,7 +160,7 @@ const showToast = (type) => {
   setDeleteConfirm(null);
 };
 
-  /* ── category label helper ── */
+ 
   const categoryLabel = (id) =>
     CATEGORIES.find((c) => c.id === id)?.title || id;
 
@@ -172,8 +172,8 @@ const showToast = (type) => {
   type={toast.type}
 />
       <div className="contributions-page">
-        {/* ── header ── */}
-        <p className="contributions-eyebrow">YOUR DISCOVERED GEMS</p>
+      
+        <p className="contributions-eyebrow">YOUR DISCOVERED PLACES</p>
         <div className="contributions-header-row">
           <div>
             <h3 className="contributions-title">My Contributions</h3>
@@ -187,11 +187,11 @@ const showToast = (type) => {
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round">
               <path d="M12 5v14M5 12h14" />
             </svg>
-            Add a Gem
+            Add a Place
           </Link>
         </div>
 
-        {/* ── empty state ── */}
+     
         {contributions.length === 0 && (
           <div className="contributions-empty">
             <div className="contributions-empty-icon">✦</div>
@@ -200,7 +200,7 @@ const showToast = (type) => {
           </div>
         )}
 
-        {/* ── list ── */}
+
        <div className="contributions-list">
           {contributions.map((place) => (
             <PlaceCard
@@ -213,9 +213,6 @@ const showToast = (type) => {
           </div>
             </div>
 
-      {/* ═══════════════════════════════════════════
-          EDIT POPUP
-      ═══════════════════════════════════════════ */}
       {editTarget && (
         <div className="ep-overlay" onClick={(e) => e.target === e.currentTarget && closeEdit()}>
           <div className="ep-modal">

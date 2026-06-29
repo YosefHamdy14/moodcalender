@@ -2,10 +2,20 @@ import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import '../css/signup.css';
-
+import { Toast, showToast } from "../components/toast";
 export default function Signup() {
   const navigate = useNavigate();
- const { login } = useAuth();
+  const { login } = useAuth();
+  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+  const toastTimeout = useRef(null);
+  const showToast = (type, message) => {
+    if (toastTimeout.current) clearTimeout(toastTimeout.current);
+    setToast({ visible: true, type, message });
+    toastTimeout.current = setTimeout(() => {
+      setToast((t) => ({ ...t, visible: false }));
+    }, 3000);
+    };
+  
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -22,17 +32,17 @@ export default function Signup() {
     const { name, email, password, confirm } = formData;
 
     if (!name || !email || !password || !confirm) {
-      alert("All fields are required");
+      showToast("error", "All fields are required");
       return;
     }
 
     if (password.length < 6) {
-      alert("Password must be at least 6 characters");
+       showToast("error", "Password must be at least 6 characters");
       return;
     }
 
     if (password !== confirm) {
-      alert("Passwords do not match");
+       showToast("error", "Passwords do not match");
       return;
     }
 
@@ -40,7 +50,7 @@ export default function Signup() {
     const exists = users.find((u) => u.email === email);
 
     if (exists) {
-      alert("User already exists");
+       showToast("error", "User already exists");
       return;
     }
 
@@ -63,12 +73,13 @@ export default function Signup() {
     localStorage.setItem("users", JSON.stringify(users));
     login(newUser);
 
-    alert("Account created successfully");
-    navigate("/");
+    showToast("success", "Account created successfully");
+    setTimeout(() => navigate("/"), 900);
   };
 
   return (
     <main className="signup-main">
+    <Toast message={toast.message} visible={toast.visible} type={toast.type} />
     <div className="Signup container" id="sign">
 
       {/* Image side */}

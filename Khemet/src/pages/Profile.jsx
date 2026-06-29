@@ -150,7 +150,8 @@ export default function Profile() {
           </Link>
           <Link to="/SavedTrips" className="pf-linkat">
             <div className="pf-linkat-data">
-              <div className="pf-linkat-svg"><svg
+              <div className="pf-linkat-svg">
+                <svg
                 width="32"
                 height="34"
                 viewBox="0 0 24 24"
@@ -276,9 +277,10 @@ export default function Profile() {
       <div className="profile-content">
         {activeTab === "info" &&
           <div className="info-section">
+             <button className="info-sec-btn" onClick={() => setShowEditModal(true)}>Edit Profile</button>
             <div className="info-cont">
               <div className="info-sec">
-                <h3 className="info-sec-tit">About</h3>
+                <h3 className="info-sec-tit">BIO</h3>
                 <p className="about-sec-p">
                    {user?.bio || "Tell people about yourself..."}
                 </p>
@@ -286,7 +288,6 @@ export default function Profile() {
               <div className="info-sec">
                 <div className="details-sec-head">
                   <h3 className="info-sec-tit">Details</h3>
-                  <button className="info-sec-btn" onClick={() => setShowEditModal(true)}>Edit Profile</button>
                 </div>
                 <ul className="sec-details-cont">
                   <li className="info-det"><span className="info-det-title">NAME</span>{ user.name}</li>
@@ -369,9 +370,35 @@ export default function Profile() {
             {user.favorites?.length > 0 ? (
               <div className="pf-content-section-container" >
                   <div className="pf-content-section-header" >
-                <h3 className="title-sect-saved">My Saved Places</h3>
-                <Link to="/favorites" className="fav-more">View All Saved Places</Link>
-                </div>
+                  <h3 className="title-sect-saved"> My Favourite Places</h3>
+                  <div className="more-places-links">
+                  <Link to="/feed" className="exfav-more"> <svg
+  width="14"
+  height="14"
+  viewBox="0 0 24 24"
+  fill="none"
+  xmlns="http://www.w3.org/2000/svg"
+>
+  <path
+    d="M16.6725 16.6412L21 21M19 11C19 15.4183 15.4183 19 11 19C6.58172 19 3 15.4183 3 11C3 6.58172 6.58172 3 11 3C15.4183 3 19 6.58172 19 11Z"
+    stroke="#1B4F6B"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+  />
+</svg>Explore more</Link>
+                  <Link to="/favorites" className="fav-more"> <svg
+              className="pf-btn-svg love-btn"
+              fill="#7A6040"
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M20.5,4.609A5.811,5.811,0,0,0,16,2.5a5.75,5.75,0,0,0-4,1.455A5.75,5.75,0,0,0,8,2.5,5.811,5.811,0,0,0,3.5,4.609c-.953,1.156-1.95,3.249-1.289,6.66,1.055,5.447,8.966,9.917,9.3,10.1a1,1,0,0,0,.974,0c.336-.187,8.247-4.657,9.3-10.1C22.45,7.858,21.453,5.765,20.5,4.609Zm-.674,6.28C19.08,14.74,13.658,18.322,12,19.34c-2.336-1.41-7.142-4.95-7.821-8.451-.513-2.646.189-4.183.869-5.007A3.819,3.819,0,0,1,8,4.5a3.493,3.493,0,0,1,3.115,1.469,1.005,1.005,0,0,0,1.76.011A3.489,3.489,0,0,1,16,4.5a3.819,3.819,0,0,1,2.959,1.382C19.637,6.706,20.339,8.243,19.826,10.889Z" />
+            </svg> View All Favourite</Link>
+                 </div>
+                  </div>
                 <div className="pf-cards-grid">
                   {user.favorites
                       .slice(-6)
@@ -478,9 +505,52 @@ export default function Profile() {
         <div className="pf-content-section-header">
           <h3 className="title-sect-saved">My Contributions</h3>
           <div className="cont-btns">
-            <Link to="/contributions" className="fav-more">Manage All</Link>
+                    <Link to="/contributions" className="cont-more">
+                       <svg
+                        className="pf-btn-svg cont-btn"
+                          width="18px"
+                          height="18px"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M19.186 2.09c.521.25 1.136.612 1.625 1.101.49.49.852 1.104 1.1 1.625.313.654.11 1.408-.401 1.92l-7.214 7.213c-.31.31-.688.541-1.105.675l-4.222 1.353a.75.75 0 0 1-.943-.944l1.353-4.221a2.75 2.75 0 0 1 .674-1.105l7.214-7.214c.512-.512 1.266-.714 1.92-.402zm.211 2.516a3.608 3.608 0 0 0-.828-.586l-6.994 6.994a1.002 1.002 0 0 0-.178.241L9.9 14.102l2.846-1.496c.09-.047.171-.107.242-.178l6.994-6.994a3.61 3.61 0 0 0-.586-.828zM4.999 5.5A.5.5 0 0 1 5.47 5l5.53.005a1 1 0 0 0 0-2L5.5 3A2.5 2.5 0 0 0 3 5.5v12.577c0 .76.082 1.185.319 1.627.224.419.558.754.977.978.442.236.866.318 1.627.318h12.154c.76 0 1.185-.082 1.627-.318.42-.224.754-.559.978-.978.236-.442.318-.866.318-1.627V13a1 1 0 1 0-2 0v5.077c0 .459-.021.571-.082.684a.364.364 0 0 1-.157.157c-.113.06-.225.082-.684.082H5.923c-.459 0-.57-.022-.684-.082a.363.363 0 0 1-.157-.157c-.06-.113-.082-.225-.082-.684V5.5z"
+                          fill="#7A6040"
+                        />
+                      </svg>
+                      Manage All</Link>
             <Link className="profile-btns-add" to="/addplace">
-              <span className="pf-hero-add-svg">+</span>Add a place
+                      <svg
+                        className="pf-hero-add-svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="#1B4F6B"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <line
+                          x1="12"
+                          y1="5"
+                          x2="12"
+                          y2="19"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                        <line
+                          x1="5"
+                          y1="12"
+                          x2="19"
+                          y2="12"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>Add a place
             </Link>
           </div>
         </div>
