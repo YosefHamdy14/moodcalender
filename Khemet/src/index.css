@@ -362,3 +362,381 @@ font-weight: 405;
   background-color:oklch(73.86% 0.13492 80.564) ;
 }
 
+
+/* ── Large Tablet / Small Desktop (≤ 1200px) ── */
+@media (max-width: 1200px) {
+  .hero-content {
+    padding-left: 7%;
+    width: 600px;
+  }
+
+  .search-home-content {
+    padding: 50px 80px;
+  }
+
+  .featured {
+    padding: 50px 80px;
+  }
+
+  .trip-section {
+    padding: 50px 80px;
+  }
+
+  .trip-section-cont {
+    padding: 50px 70px;
+  }
+
+  .home-num {
+    padding: 20px 50px;
+  }
+
+  .search-tags {
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+  }
+}
+
+/* ── Tablet (≤ 1024px) ── */
+@media (max-width: 1024px) {
+  .hero {
+    height: 520px;
+  }
+
+  .hero-content {
+    padding-left: 6%;
+    padding-top: 100px;
+    width: 540px;
+  }
+
+  .hero-tit-prim {
+    font-size: 48px;
+  }
+
+  .hero-tit-sec {
+    font-size: 46px;
+    top: -18px;
+  }
+
+  .hero-p {
+    font-size: 15px;
+    top: -10px;
+  }
+
+  .search-home-content {
+    padding: 40px 60px;
+  }
+
+  .search-home-tit {
+    font: 38px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .featured {
+    padding: 40px 60px;
+  }
+
+  .popular-tit {
+    font: 38px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .trip-section {
+    padding: 40px 60px;
+    margin-bottom: 30px;
+  }
+
+  .trip-section-cont {
+    padding: 50px 60px;
+  }
+
+  .home-trip-tit {
+    font: 38px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .trip-section-det {
+    width: 70%;
+  }
+
+  .home-num {
+    padding: 20px 40px;
+  }
+
+  .home-num-cont {
+    gap: 0;
+    margin: 5px;
+  }
+
+  .places {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    margin: 20px 0 20px 10px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .home {
+    padding-top: 55px;
+  }
+
+  /* Hero */
+  .hero {
+    height: auto;
+    min-height: 460px;
+    background-position: center top;
+  }
+
+  .hero-content {
+    padding: 80px 24px 40px;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero-tit-prim {
+    font-size: 40px;
+  }
+
+  .hero-tit-sec {
+    font-size: 38px;
+    top: -14px;
+    padding: 0 8px;
+  }
+
+  .hero-p {
+    font-size: 14px;
+    top: -8px;
+  }
+
+  .linkat {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .home-btn {
+    width: 145px;
+    font-size: 15px;
+  }
+
+  /* Stats bar */
+  .home-num {
+    padding: 20px 24px;
+  }
+
+  .home-num-cont {
+    grid-template-columns: 1fr;
+    margin: 0;
+    gap: 4px;
+    
+    
+  }
+
+  .num-card {
+    margin: 6px 0;
+    padding: 8px 0;
+    border-bottom: 1px solid hsl(32, 24%, 37%, 0.12);
+    
+  }
+
+  .num-card:last-child {
+    border-bottom: none;
+  }
+
+  .num {
+    font-size: 22px;
+  }
+
+
+  .search-home-content {
+    padding: 36px 24px;
+  }
+
+  .search-home-tit {
+    font: 32px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .search-tags {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    padding: 10px 0;
+    margin: 10px 0;
+  }
+
+  .tag-card {
+    height: auto;
+    min-height: 160px;
+    padding: 28px 18px;
+  }
+
+  /* Featured section */
+  .featured {
+    padding: 36px 24px;
+  }
+
+  .featured-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .popular-tit {
+    font: 32px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .ex-more {
+    margin-right: 0;
+  }
+
+  .places {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    margin: 20px 0;
+    gap: 1rem;
+  }
+
+  .trip-section {
+    padding: 36px 16px;
+    margin-bottom: 20px;
+  }
+
+  .trip-section-cont {
+    padding: 44px 32px;
+    margin: 0;
+  }
+
+  .home-trip-tit {
+    font: 32px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .trip-section-det {
+    width: 100%;
+  }
+
+  .tripsec-btn {
+    width: 100%;
+    max-width: 260px;
+  }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .home {
+    padding-top: 50px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 400px;
+  }
+
+  .hero-content {
+    padding: 70px 18px 32px;
+  }
+
+  .hero-tit-prim {
+    font-size: 32px;
+  }
+
+  .hero-tit-sec {
+    font-size: 30px;
+    top: -10px;
+    padding: 0 5px;
+  }
+
+  .hero-p {
+    font-size: 13px;
+    top: -5px;
+  }
+
+  .home-btn {
+    width: 135px;
+    font-size: 14px;
+    padding: 5px 8px;
+  }
+
+  /* Stats bar */
+  .home-num {
+    padding: 16px 18px;
+    
+  }
+
+  .num {
+    font-size: 20px;
+  }
+
+  .num-det {
+    font-size: 15px;
+  }
+
+  /* Search section */
+  .search-home-content {
+    padding: 28px 18px;
+  }
+
+  .search-home-tit {
+    font: 28px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .search-tags {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .tag-card {
+    min-height: 130px;
+    padding: 24px 16px;
+    border-radius: 16px;
+  }
+
+  .search-home-card-tit {
+    font: 21px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  /* Featured */
+  .featured {
+    padding: 28px 18px;
+  }
+
+  .popular-tit {
+    font: 28px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .places {
+    grid-template-columns: 1fr;
+    margin: 16px 0;
+  }
+
+  /* Trip CTA */
+  .trip-section {
+    padding: 28px 12px;
+  }
+
+  .trip-section-cont {
+    padding: 36px 24px;
+    border-radius: 18px;
+  }
+
+  .home-trip-tit {
+    font: 28px "Cormorant Garamond", ui-serif, Georgia, serif;
+  }
+
+  .trip-section-det {
+    font-size: 14px;
+  }
+
+  .tripsec-btn {
+    margin-top: 28px;
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
+/* ── Reduced Motion ── */
+@media (prefers-reduced-motion: reduce) {
+  .search-home-line-rect {
+    transition: none;
+  }
+
+  .cta-btn,
+  .trip-btn,
+  .tripsec-btn,
+  .ex-more,
+  .tag-card {
+    transition: none;
+  }
+}

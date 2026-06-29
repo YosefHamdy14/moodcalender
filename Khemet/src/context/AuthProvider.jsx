@@ -6,6 +6,15 @@ function stripImages(place) {
   return rest;
 }
 
+export function syncUserInStorage(updatedUser) {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const updatedUsers = users.map((u) =>
+    u.email === updatedUser.email ? updatedUser : u
+  );
+  localStorage.setItem("users", JSON.stringify(updatedUsers));
+}
+
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
@@ -14,58 +23,51 @@ export function AuthProvider({ children }) {
 
   const [favorites, setFavorites] = useState([]);
 
-  // Sync user + favorites on load
+
   useEffect(() => {
     if (user) {
       setFavorites(user.favorites || []);
     }
   }, [user]);
 
-  // LOGIN
+
   const login = (userData) => {
     setUser(userData);
     setFavorites(userData.favorites || []);
     localStorage.setItem("user", JSON.stringify(userData));
   };
 
-  // LOGOUT
   const logout = () => {
     setUser(null);
     setFavorites([]);
     localStorage.removeItem("user");
   };
 
-  // UPDATE USER (with safe storage)
+
   const updateUser = (newData) => {
     if (!user) return;
-
     const updated = { ...user, ...newData };
-
     const safeForStorage = {
       ...updated,
       contributions: (updated.contributions || []).map(stripImages),
     };
-
     setUser(updated);
     localStorage.setItem("user", JSON.stringify(safeForStorage));
+    syncUserInStorage(safeForStorage);
   };
 
-  // FAVORITES
   const toggleFavorite = (place) => {
     if (!user) return;
-
     const exists = favorites.some((f) => f.id === place.id);
-
     const updatedFavorites = exists
       ? favorites.filter((f) => f.id !== place.id)
       : [...favorites, place];
 
     setFavorites(updatedFavorites);
-
     const updatedUser = { ...user, favorites: updatedFavorites };
     setUser(updatedUser);
-
     localStorage.setItem("user", JSON.stringify(updatedUser));
+    syncUserInStorage(safeForStorage);
   };
 
   const isFavorite = (id) => {

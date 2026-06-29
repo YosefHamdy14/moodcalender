@@ -62,7 +62,7 @@ function Footer() {
   return (
     <>
       <footer className="footer">
-        <div className="grid">
+        <div className="footer-grid">
           <div>
             <h3>Explore Egypt</h3>
             <p>

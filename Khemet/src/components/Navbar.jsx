@@ -18,19 +18,20 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
   useEffect(() => {
-  const handleClickOutside = (e) => {
-    if (!e.target.closest('.profile-btn') && !e.target.closest('.profile-dropdown')) {
-      setShowProfileMenu(false);
-    }
-  };
-  document.addEventListener('mousedown', handleClickOutside);
-  return () => document.removeEventListener('mousedown', handleClickOutside);
-}, []);
+    const handleClickOutside = (e) => {
+      if (!e.target.closest('.profile-btn') && !e.target.closest('.profile-dropdown')) {
+        setShowProfileMenu(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
 
   const toggleMenu = () => {
-  setIsMenuOpen((prev) => !prev);
-  setShowProfileMenu(false); 
-};
+    setIsMenuOpen((prev) => !prev);
+    setShowProfileMenu(false);
+  };
 
 const toggleProfileMenu = () => {
   setShowProfileMenu((prev) => !prev);

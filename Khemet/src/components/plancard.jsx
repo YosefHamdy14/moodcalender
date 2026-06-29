@@ -14,14 +14,11 @@ function PlanCard({
           src={plan.places[0]?.coverImage}
           alt={plan.name}
         />
-
         <span className="plan-badge">
           {plan.name}
         </span>
       </div>
-
       <div className="plan-content">
-
         <h3 className="plan-title">
           {plan.name === "Plan A"
             ? "Balanced Egypt"
