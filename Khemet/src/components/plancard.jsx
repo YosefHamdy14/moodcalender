@@ -63,7 +63,7 @@ function PlanCard({
   Preview
 </button>
 
-          <button className="select-btn" onClick={() => onSelect(plan)}>
+          <button className="select-btn" onClick={() => {alert("Selected"); onSelect(plan)}}>
             Select →
           </button>
 
