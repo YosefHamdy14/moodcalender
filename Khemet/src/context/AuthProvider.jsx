@@ -6,6 +6,15 @@ function stripImages(place) {
   return rest;
 }
 
+export function syncUserInStorage(updatedUser) {
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+  const updatedUsers = users.map((u) =>
+    u.email === updatedUser.email ? updatedUser : u
+  );
+  localStorage.setItem("users", JSON.stringify(updatedUsers));
+}
+
+
 export function AuthProvider({ children }) {
   const [user, setUser] = useState(() => {
     const stored = localStorage.getItem("user");
@@ -44,6 +53,7 @@ export function AuthProvider({ children }) {
     };
     setUser(updated);
     localStorage.setItem("user", JSON.stringify(safeForStorage));
+    syncUserInStorage(safeForStorage);
   };
 
   const toggleFavorite = (place) => {
@@ -57,6 +67,7 @@ export function AuthProvider({ children }) {
     const updatedUser = { ...user, favorites: updatedFavorites };
     setUser(updatedUser);
     localStorage.setItem("user", JSON.stringify(updatedUser));
+    syncUserInStorage(safeForStorage);
   };
 
   const isFavorite = (id) => {
