@@ -230,6 +230,7 @@ header{
   border-top: 1px solid rgba(74, 143, 170, 0.2);
   font-family: 'DM Sans', sans-serif;
   width: 100%;
+  align-self: flex-end;
 }
 .footer-grid{
     display: grid;

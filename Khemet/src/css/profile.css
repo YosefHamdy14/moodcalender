@@ -696,7 +696,9 @@ html { scroll-behavior: smooth; }
   border-color: hsl(33, 31%, 36%, 0.3);
   background-color: hsla(33, 31%, 36%, 0.1);
 }
-
+.fav-more svg{
+  top: auto;
+}
 .exfav-more {
   border: 1px solid hsl(201, 60%, 26%, 0.2);
   background-color: hsl(201, 60%, 26%, 0.1);
@@ -706,14 +708,12 @@ html { scroll-behavior: smooth; }
   border-color: hsl(201, 60%, 26%, 0.5);
   background-color: hsl(201, 60%, 26%, 0.2);
 }
-
 .cont-btns {
   padding: 5px;
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
 }
-
 .cont-more,
 .profile-btns-add {
   display: inline-flex;
@@ -735,6 +735,10 @@ html { scroll-behavior: smooth; }
   border: 1px solid hsl(33, 31%, 36%, 0.1);
   background-color: #EFE4C4;
   color: #7A6040;
+}
+.cont-more svg {
+  position: relative;
+  top: 1px;
 }
 .cont-more:hover {
   border-color: hsl(33, 31%, 36%, 0.3);

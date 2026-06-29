@@ -470,7 +470,7 @@ font-weight: 405;
   }
 }
 
-/* ── Small Tablet / Large Mobile (≤ 768px) ── */
+
 @media (max-width: 768px) {
   .home {
     padding-top: 55px;
@@ -523,12 +523,15 @@ font-weight: 405;
     grid-template-columns: 1fr;
     margin: 0;
     gap: 4px;
+    
+    
   }
 
   .num-card {
     margin: 6px 0;
     padding: 8px 0;
     border-bottom: 1px solid hsl(32, 24%, 37%, 0.12);
+    
   }
 
   .num-card:last-child {
@@ -539,7 +542,7 @@ font-weight: 405;
     font-size: 22px;
   }
 
-  /* Search section */
+
   .search-home-content {
     padding: 36px 24px;
   }
@@ -586,7 +589,6 @@ font-weight: 405;
     gap: 1rem;
   }
 
-  /* Trip CTA section */
   .trip-section {
     padding: 36px 16px;
     margin-bottom: 20px;
@@ -650,6 +652,7 @@ font-weight: 405;
   /* Stats bar */
   .home-num {
     padding: 16px 18px;
+    
   }
 
   .num {

@@ -1,8 +1,8 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import '../css/signup.css';
-import { Toast, showToast } from "../components/toast";
+import Toast from "../components/toast";
 export default function Signup() {
   const navigate = useNavigate();
   const { login } = useAuth();
@@ -65,7 +65,6 @@ export default function Signup() {
   contributions: [],
   savedTrips: [],
   favorites: [],
-
   createdAt: Date.now()
 };
 
