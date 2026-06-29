@@ -25,8 +25,6 @@ html { scroll-behavior: smooth; }
   align-content: center;
   align-items: center;
 }
-
-
 /* ── Container card ── */
 .container {
   display: none;
