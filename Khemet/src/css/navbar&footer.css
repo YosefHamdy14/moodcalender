@@ -1,14 +1,14 @@
-*{
-margin: 0px;
-padding: 0px;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
 html { scroll-behavior: smooth; }
 body {
- position: relative;
- font-family: 'DM Sans', sans-serif;
+  position: relative;
+  font-family: 'DM Sans', sans-serif;
   line-height: 1.6;
- -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
   min-height: 100vh;
 }
 
@@ -33,12 +33,14 @@ header{
   justify-content: space-between;
   transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
 .nav-scrolled {
-  background: linear-gradient(135deg, rgba(10, 31, 53, 0.75) 0%, rgba(27, 79, 107, 0.75) 100%)!important; 
+  background: linear-gradient(135deg, rgba(10, 31, 53, 0.75) 0%, rgba(27, 79, 107, 0.75) 100%) !important;
   backdrop-filter: blur(12px);
   border-bottom: 0.1px solid hsl(44, 54%, 54%, 0.5);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
+
 .nav .logo {
   display: flex;
   align-items: center;
@@ -79,12 +81,14 @@ header{
   background: rgba(74, 143, 170, 0.1);
   transform: translateY(-2px);
 }
+
 .links a.active {
   color: #e3be56;
   background: rgba(74, 143, 170, 0.15);
   border: 1px solid rgba(212, 175, 55, 0.3);
   box-shadow: 0 0 20px rgba(212, 175, 55, 0.05);
 }
+
 .links a::after {
   content: '';
   position: absolute;
@@ -122,42 +126,83 @@ header{
   align-items: center;
   gap: 0.5rem;
   flex-shrink: 0;
+  position: relative;
 }
-.profile {
+.profile-btn {
   color: #F5EDD7;
-  background-color: transparent;
-  text-align: center;
-  width: 100px;
-  height: 40px;
-  border: hsl(44, 54%, 54%, 0.2) solid 0.3px;
+  background: rgba(255, 255, 255, 0.08);
+  border: hsla(44, 54%, 54%, 0.2) solid 0.3px;
   border-radius: 30px;
+  height: 40px;
+  padding: 0 14px 0 8px;
   display: flex;
   align-items: center;
-  font-size: 0.9rem;
   justify-content: center;
+  gap: 8px;
   cursor: pointer;
+  transition: all .2s;
+  position: relative;
+}
+
+.profile-btn span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #F5EDD7;
+  white-space: nowrap;
+}
+
+.nav-scrolled .profile-btn {
+   color: rgba(255, 255, 255, .8); 
+  }
+
+.profile-btn:hover {
+  border: hsla(44, 54%, 54%, .7) solid .3px;
+}
+
+.profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1B4F6B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.nav-scrolled .profile-avatar {
+  background: rgba(255, 255, 255, .15);
+  color: white;
+}
+.profile-dropdown {
+  position: absolute;
+  top: 52px;
+  right: 0;
+  background: linear-gradient(135deg, #0A1F35 0%, #1B4F6B 100%);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: 16px;
+  padding: 0.6rem 0;
+  min-width: 200px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+  z-index: 200;
+  backdrop-filter: blur(12px);
+}
+
+.profile-dropdown a {
+  display: block;
+  padding: 0.5rem 1.2rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
   transition: all 0.2s;
+  text-decoration: none;
 }
 
-.nav-scrolled .profile {
-  color: rgba(255, 255, 255, 0.8);
-}
-
-.profile:hover {
- border: hsl(44, 54%, 54%, 0.7) solid 0.3px;
-}
-
-.profile svg {
-  margin-right: 4px;
-  fill: #4A8FAA;
-}
-
-.nav-scrolled .profile svg {
-  fill: rgba(255, 255, 255, 0.8);
-}
-
-.profile svg:hover {
-  fill: #d3f2fd;
+.profile-dropdown a:hover {
+  background: rgba(212, 175, 55, 0.08);
+  color: #C9A84C;
 }
 .logout {
   color: #F5EDD7;
@@ -316,7 +361,6 @@ hr{
   padding: 5px;
   z-index: 200;
 }
-
 .hamburger .bar {
   display: block;
   width: 28px;
@@ -393,44 +437,84 @@ hr{
   text-align: center;
 }
 
-.mobile-right .profile,
 .mobile-right .logout,
 .mobile-right .loginbtn,
 .mobile-right .signup {
-  justify-content: center ;
+  justify-content: center;
   width: 100%;
   padding: 0.8rem;
   font-size: 1rem;
 }
+.mobile-profile {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+}
+
+.mobile-profile .profile-btn {
+  height: 40px;
+  padding: 0 14px 0 8px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.08);
+  border: hsla(44, 54%, 54%, 0.2) solid 0.3px;
+  color: #F5EDD7;
+  cursor: pointer;
+  transition: all .2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.mobile-profile .profile-btn:hover {
+  border: hsla(44, 54%, 54%, .7) solid .3px;
+}
+
+.mobile-profile .profile-btn span {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #F5EDD7;
+  white-space: nowrap;
+}
+
+.mobile-profile .profile-avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #1B4F6B;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.mobile-profile .profile-dropdown {
+  top: 48px;
+  right: 0;
+}
+
+.nav-scrolled .mobile-profile .profile-avatar {
+  background: rgba(255, 255, 255, .15);
+  color: white;
+}
 @media (max-width: 768px) {
-  .links {
-    display: none;
-  }
-
-  .right {
-    display: none;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .nav {
-    padding: 0 1rem;
-  }
+  .links { display: none; }
+  .right { display: none; }
+  .hamburger { display: flex; }
+  .mobile-profile { display: flex !important; margin-left: auto; }
+  .nav { padding: 0 1rem; gap: 0.8rem; }
 }
 
 @media (min-width: 769px) {
-  .mobile-menu {
-    display: none !important;
-  }
+  .mobile-menu { display: none !important; }
+  .mobile-profile { display: none !important; }
 }
 .modal-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: 0; left: 0; right: 0; bottom: 0;
   background: rgba(10, 31, 53, 0.85);
   backdrop-filter: blur(12px);
   display: flex;
@@ -465,13 +549,11 @@ hr{
 
 .modal-close {
   position: absolute;
-  top: 1rem;
-  right: 1rem;
+  top: 1rem; right: 1rem;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 36px; height: 36px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -617,6 +699,7 @@ hr{
   font-size: 1.1rem;
   font-weight: 500;
 }
+
 @media (max-width: 600px) {
   .modal-content {
     padding: 1.5rem;
