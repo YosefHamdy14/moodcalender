@@ -443,6 +443,13 @@ const showToast = (type) => {
       setTagInput("");
     }
   };
+      const handleTagBlur = () => {
+      const tag = tagInput.trim().toLowerCase().replace(/\s+/g, "-");
+      if (tag && !form.tags.includes(tag)) {
+        setForm(prev => ({ ...prev, tags: [...prev.tags, tag] }));
+      }
+      setTagInput("");
+    };
   const removeTag = (tag) =>
     setForm((prev) => ({ ...prev, tags: prev.tags.filter((t) => t !== tag) }));
 
@@ -660,6 +667,7 @@ const showToast = (type) => {
                       value={tagInput}
                       onChange={(e) => setTagInput(e.target.value)}
                       onKeyDown={handleTagKeyDown}
+                      onBlur={handleTagBlur}
                       placeholder={form.tags.length === 0 ? "nature, desert..." : ""}
                     />
                   </div>

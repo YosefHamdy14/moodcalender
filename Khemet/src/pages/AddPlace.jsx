@@ -33,9 +33,16 @@ const CATEGORIES = [
 
 const LOCATIONS = [
   {
-    governorate: "Cairo",
-    coords: { lat: 30.0444, lng: 31.2357 },
-    cities: ["Cairo", "Maadi", "Heliopolis", "Nasr City", "New Cairo", "Zamalek",
+   governorate: "Cairo",
+coords: { lat: 30.0444, lng: 31.2357 },
+
+cities: [
+  "Cairo",
+  "Maadi",
+  "Heliopolis",
+  "Nasr City",
+  "New Cairo",
+  "Zamalek",
   "Garden City",
   "Shubra",
   "Ain Shams",
@@ -46,57 +53,123 @@ const LOCATIONS = [
   "Obour",
   "Badr City",
   "El Rehab",
-  "Madinaty"],
-    cityCoords: {
-      "Cairo":              { lat: 30.0444, lng: 31.2357 },
-      "Maadi":              { lat: 29.9602, lng: 31.2569 },
-      "Heliopolis":         { lat: 30.0924, lng: 31.3204 },
-      "Nasr City":          { lat: 30.0626, lng: 31.3361 },
-      "New Cairo":          { lat: 30.0131, lng: 31.4961 },
-       "Zamalek":      { lat: 30.0626, lng: 31.2197 },
-      "Garden City":  { lat: 30.0385, lng: 31.2296 },
-      "Shubra":       { lat: 30.0730, lng: 31.2450 },
-      "Ain Shams":    { lat: 30.1290, lng: 31.3300 },
-      "El Marg":      { lat: 30.1640, lng: 31.3370 },
-      "Helwan":       { lat: 29.8414, lng: 31.3000 },
-      "Basatin":      { lat: 29.9953, lng: 31.2797 },
-      "Mokattam":     { lat: 30.0100, lng: 31.3030 },
-      "Obour":        { lat: 30.2280, lng: 31.4800 },
-      "Badr City":    { lat: 30.1360, lng: 31.7420 },
-      "El Rehab":     { lat: 30.0637, lng: 31.4900 },
-      "Madinaty":     { lat: 30.0840, lng: 31.6300 }
-    },
+  "Madinaty",
+
+  "Downtown",
+  "Abbassia",
+  "Sayeda Zeinab",
+  "Dar El Salam",
+  "El Sahel",
+  "Rod El Farag",
+  "Zeitoun",
+  "Hadayek El Qobba",
+  "Nozha",
+  "Tebbin",
+  "15th of May City",
+  "Katameya",
+
+  // ✅ New additions
+  "El Shorouk",
+  "New Administrative Capital"
+],
+
+cityCoords: {
+  "Cairo":              { lat: 30.0444, lng: 31.2357 },
+  "Maadi":              { lat: 29.9602, lng: 31.2569 },
+  "Heliopolis":         { lat: 30.0924, lng: 31.3204 },
+  "Nasr City":          { lat: 30.0626, lng: 31.3361 },
+  "New Cairo":          { lat: 30.0131, lng: 31.4961 },
+  "Zamalek":            { lat: 30.0626, lng: 31.2197 },
+  "Garden City":        { lat: 30.0385, lng: 31.2296 },
+  "Shubra":             { lat: 30.0730, lng: 31.2450 },
+  "Ain Shams":          { lat: 30.1290, lng: 31.3300 },
+  "El Marg":            { lat: 30.1640, lng: 31.3370 },
+  "Helwan":             { lat: 29.8414, lng: 31.3000 },
+  "Basatin":            { lat: 29.9953, lng: 31.2797 },
+  "Mokattam":           { lat: 30.0100, lng: 31.3030 },
+  "Obour":              { lat: 30.2280, lng: 31.4800 },
+  "Badr City":          { lat: 30.1360, lng: 31.7420 },
+  "El Rehab":           { lat: 30.0637, lng: 31.4900 },
+  "Madinaty":           { lat: 30.0840, lng: 31.6300 },
+
+  "Downtown":           { lat: 30.0478, lng: 31.2385 },
+  "Abbassia":           { lat: 30.0722, lng: 31.2778 },
+  "Sayeda Zeinab":      { lat: 30.0293, lng: 31.2381 },
+  "Dar El Salam":       { lat: 29.9950, lng: 31.2400 },
+  "El Sahel":           { lat: 30.0800, lng: 31.2500 },
+  "Rod El Farag":       { lat: 30.0808, lng: 31.2300 },
+  "Zeitoun":            { lat: 30.1133, lng: 31.3133 },
+  "Hadayek El Qobba":   { lat: 30.0985, lng: 31.2870 },
+  "Nozha":              { lat: 30.1060, lng: 31.3500 },
+  "Tebbin":             { lat: 29.8000, lng: 31.3000 },
+  "15th of May City":   { lat: 29.8500, lng: 31.3500 },
+  "Katameya":           { lat: 30.0200, lng: 31.4200 },
+  "El Shorouk":         { lat: 30.1400, lng: 31.6200 },
+  "New Administrative Capital": { lat: 30.0130, lng: 31.7000 }
+}
   },
-  {
-    governorate: "Giza",
-    coords: { lat: 30.0131, lng: 31.2089 },
-    cities: ["Giza", "Dokki", "Mohandessin", "Haram", "Faisal", "Sheikh Zayed", "6th of October",
-  "Hadayek October",
-  "Abu Rawash",
-  "Kerdasa",
-  "Imbaba",
-  "Warraq",
-  "Boulaq Dakrour",
-  "Ossim",
-  "Atfih"],
-    cityCoords: {
-      "Giza":          { lat: 30.0131, lng: 31.2089 },
-      "Dokki":         { lat: 30.0393, lng: 31.2117 },
-      "Mohandessin":   { lat: 30.0566, lng: 31.2007 },
-      "Haram":         { lat: 29.9772, lng: 31.1313 },
-      "Faisal":        { lat: 29.9925, lng: 31.1429 },
-      "Sheikh Zayed": { lat: 30.0177, lng: 30.9419 },
-      "6th of October":   { lat: 29.9397, lng: 30.9253 },
-      "Hadayek October":  { lat: 29.9500, lng: 30.9000 },
-      "Abu Rawash":       { lat: 30.0310, lng: 31.0780 },
-      "Kerdasa":          { lat: 30.0315, lng: 31.1070 },
-      "Imbaba":           { lat: 30.0710, lng: 31.2090 },
-      "Warraq":           { lat: 30.0890, lng: 31.2050 },
-      "Boulaq Dakrour":   { lat: 30.0350, lng: 31.1970 },
-      "Ossim":            { lat: 30.1200, lng: 31.1350 },
-      "Atfih":            { lat: 29.3700, lng: 31.2700 }
-        },
-  },
+ {
+  governorate: "Giza",
+  coords: { lat: 30.0131, lng: 31.2089 },
+
+  cities: [
+    "Giza",
+    "Dokki",
+    "Mohandessin",
+    "Haram",
+    "Faisal",
+    "Sheikh Zayed",
+    "6th of October",
+
+    "Abu Rawash",
+    "Kerdasa",
+    "Imbaba",
+    "Warraq",
+    "Boulaq Dakrour",
+    "Ossim",
+    "Atfih",
+
+    // ✅ Added (clean, non-overlapping)
+    "Agouza",
+    "Kit Kat",
+    "Talbia",
+    "Omrania",
+    "Saft El Laban",
+    "Hawamdeya",
+    "Badrasheen",
+    "Monib",
+    "Nazlet El Saman",
+    "Sakkara"
+  ],
+
+  cityCoords: {
+    "Giza":            { lat: 30.0131, lng: 31.2089 },
+    "Dokki":           { lat: 30.0393, lng: 31.2117 },
+    "Mohandessin":     { lat: 30.0566, lng: 31.2007 },
+    "Haram":           { lat: 29.9772, lng: 31.1313 },
+    "Faisal":          { lat: 29.9925, lng: 31.1429 },
+    "Sheikh Zayed":    { lat: 30.0177, lng: 30.9419 },
+    "6th of October":  { lat: 29.9397, lng: 30.9253 },
+
+    "Abu Rawash":      { lat: 30.0310, lng: 31.0780 },
+    "Kerdasa":         { lat: 30.0315, lng: 31.1070 },
+    "Imbaba":          { lat: 30.0710, lng: 31.2090 },
+    "Warraq":          { lat: 30.0890, lng: 31.2050 },
+    "Boulaq Dakrour":  { lat: 30.0350, lng: 31.1970 },
+    "Ossim":           { lat: 30.1200, lng: 31.1350 },
+    "Atfih":           { lat: 29.3700, lng: 31.2700 },
+    "Agouza":          { lat: 30.0580, lng: 31.2050 },
+    "Kit Kat":         { lat: 30.0665, lng: 31.2095 },
+    "Talbia":          { lat: 29.9900, lng: 31.1500 },
+    "Omrania":         { lat: 29.9700, lng: 31.1700 },
+    "Saft El Laban":   { lat: 30.0600, lng: 31.1800 },
+    "Hawamdeya":       { lat: 29.9000, lng: 31.2500 },
+    "Badrasheen":      { lat: 29.8500, lng: 31.3000 },
+    "Monib":           { lat: 29.9800, lng: 31.2100 },
+    "Nazlet El Saman": { lat: 29.9750, lng: 31.1350 },
+    "Sakkara":         { lat: 29.8710, lng: 31.2165 }
+  }
+},
   {
     governorate: "Alexandria",
     coords: { lat: 31.2001, lng: 29.9187 },
@@ -468,6 +541,7 @@ export default function AddPlace() {
   const [errors, setErrors] = useState({});
   const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
   const toastTimeout = useRef(null);
+  const skipMapFlyRef = useRef(false);
  
   const showToast = (type, message) => {
     if (toastTimeout.current) clearTimeout(toastTimeout.current);
@@ -478,8 +552,7 @@ export default function AddPlace() {
   };
 
   const availableCities = LOCATIONS.find(l => l.governorate === form.governorate)?.cities || [];
-  const FIELD_ORDER = ["title", "description", "category", "governorate", "city", "lat","rating"];
-
+  const FIELD_ORDER = ["title", "description", "category", "governorate", "city", "lat", "rating", "coverImage"];
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -502,6 +575,13 @@ export default function AddPlace() {
       setTagInput("");
     }
   };
+  const handleTagOutside = () => {
+  const tag = tagInput.trim().toLowerCase().replace(/\s+/g, "-");
+  if (tag && !form.tags.includes(tag)) {
+    setForm(prev => ({ ...prev, tags: [...prev.tags, tag] }));
+  }
+  setTagInput("");
+};
   const removeTag = (tag) => {
     setForm(prev => ({ ...prev, tags: prev.tags.filter(t => t !== tag) }));
   };
@@ -509,7 +589,11 @@ export default function AddPlace() {
   // ── map zoom ──────────────────────────────────────────────
   const mapRef = useRef(null);
   useEffect(() => {
-  if (!mapRef.current) return;
+    if (!mapRef.current) return;
+    if (skipMapFlyRef.current) {
+    skipMapFlyRef.current = false; 
+    return;
+  }
   const loc = LOCATIONS.find(l => l.governorate === form.governorate);
   if (!loc) return;
     
@@ -548,11 +632,52 @@ export default function AddPlace() {
         const { lat, lon } = data[0];
         const parsedLat = parseFloat(lat);
         const parsedLng = parseFloat(lon);
+        const revRes = await fetch(
+        `https://nominatim.openstreetmap.org/reverse?lat=${parsedLat}&lon=${parsedLng}&format=json`
+        );
+        const revData = await revRes.json();
+        const addr = revData.address || {};
+        const rawGov = addr.state || addr.county || addr.province || "";
+        const rawCity = addr.city || addr.town || addr.village || addr.suburb || "";
+        
+        const matchedLocation = LOCATIONS.find((l) =>
+          rawGov.toLowerCase().includes(l.governorate.toLowerCase()) ||
+          l.governorate.toLowerCase().includes(rawGov.toLowerCase())
+        );
+
+          const matchedCity = matchedLocation?.cities.find((c) =>
+          rawCity.toLowerCase().includes(c.toLowerCase()) ||
+          c.toLowerCase().includes(rawCity.toLowerCase())
+        );
+    
         setMarkerPos({ lat: parsedLat, lng: parsedLng });
-        setForm(prev => ({ ...prev, lat: parsedLat.toFixed(6), lng: parsedLng.toFixed(6) }));
+        skipMapFlyRef.current = true;
+        setForm(prev => ({
+                ...prev,
+                lat: parsedLat.toFixed(6),
+                lng: parsedLng.toFixed(6),
+                ...(matchedLocation && { governorate: matchedLocation.governorate }),
+                ...(matchedCity   && { city: matchedCity }),
+              }));
+        
         mapRef.current?.flyTo([parsedLat, parsedLng], 15, { duration: 1.2 });
-        setErrors(prev => ({ ...prev, lat: "", lng: "" }));
-      }
+           
+        setErrors(prev => ({
+            ...prev,
+            lat: "",
+            lng: "",
+            ...(matchedLocation && { governorate: "" }),
+            ...(matchedCity     && { city: "" }),
+        }));
+          if (!matchedLocation) {
+          setSearchError("Location pinned, but governorate not recognised — please select manually.");
+        } else if (!matchedCity) {
+          setSearchError(`Governorate set to ${matchedLocation.governorate} — city not recognised, please select manually.`);
+        } else {
+          setSearchError("");
+        }
+          }
+       
     } catch {
       setSearchError("Search failed. Please try again.");
     } finally {
@@ -606,6 +731,7 @@ export default function AddPlace() {
     if (!form.city) e.city = "Pick a city";
     if (!form.lat || !form.lng) e.lat = "Pin a location on the map";
     if (!isValidRating(form.rating)) e.rating = "Rating must be between 0 and 5";
+    if (!form.coverImage) e.coverImage = "Cover image is required";
     return e;
   };
 
@@ -626,6 +752,9 @@ export default function AddPlace() {
       );
       return;
     }
+      const submittedForm = (!form.gallery || form.gallery.length === 0)
+    ? { ...form, gallery: [form.coverImage] }
+    : form;
 
     try {
       const storedPlaces = JSON.parse(localStorage.getItem("places")) || [];
@@ -729,6 +858,7 @@ export default function AddPlace() {
                   value={tagInput}
                   onChange={e => setTagInput(e.target.value)}
                   onKeyDown={handleTagKeyDown}
+                  onBlur={handleTagOutside}
                   placeholder={form.tags.length === 0 ? "nature, adventure..." : ""}
                 />
               </div>
