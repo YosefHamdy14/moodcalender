@@ -669,6 +669,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  justify-content: end;
 }
 
 .fav-more,
@@ -713,6 +714,7 @@ html { scroll-behavior: smooth; }
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+   justify-content: end;
 }
 .cont-more,
 .profile-btns-add {
@@ -912,7 +914,7 @@ html { scroll-behavior: smooth; }
   }
   .more-places-links{
     display: grid;
-
+   grid-template-columns: 1fr;
   }
   .exfav-more,
   .fav-more {
