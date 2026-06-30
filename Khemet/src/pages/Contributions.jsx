@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState ,useRef } from "react";
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import { deletePlaceImages, getPlaceImages } from "../components/PicCache";
@@ -18,9 +18,16 @@ const CATEGORIES = [
 
 const LOCATIONS = [
   {
-    governorate: "Cairo",
-    coords: { lat: 30.0444, lng: 31.2357 },
-    cities: ["Cairo", "Maadi", "Heliopolis", "Nasr City", "New Cairo", "Zamalek",
+   governorate: "Cairo",
+coords: { lat: 30.0444, lng: 31.2357 },
+
+cities: [
+  "Cairo",
+  "Maadi",
+  "Heliopolis",
+  "Nasr City",
+  "New Cairo",
+  "Zamalek",
   "Garden City",
   "Shubra",
   "Ain Shams",
@@ -31,57 +38,123 @@ const LOCATIONS = [
   "Obour",
   "Badr City",
   "El Rehab",
-  "Madinaty"],
-    cityCoords: {
-      "Cairo":              { lat: 30.0444, lng: 31.2357 },
-      "Maadi":              { lat: 29.9602, lng: 31.2569 },
-      "Heliopolis":         { lat: 30.0924, lng: 31.3204 },
-      "Nasr City":          { lat: 30.0626, lng: 31.3361 },
-      "New Cairo":          { lat: 30.0131, lng: 31.4961 },
-       "Zamalek":      { lat: 30.0626, lng: 31.2197 },
-      "Garden City":  { lat: 30.0385, lng: 31.2296 },
-      "Shubra":       { lat: 30.0730, lng: 31.2450 },
-      "Ain Shams":    { lat: 30.1290, lng: 31.3300 },
-      "El Marg":      { lat: 30.1640, lng: 31.3370 },
-      "Helwan":       { lat: 29.8414, lng: 31.3000 },
-      "Basatin":      { lat: 29.9953, lng: 31.2797 },
-      "Mokattam":     { lat: 30.0100, lng: 31.3030 },
-      "Obour":        { lat: 30.2280, lng: 31.4800 },
-      "Badr City":    { lat: 30.1360, lng: 31.7420 },
-      "El Rehab":     { lat: 30.0637, lng: 31.4900 },
-      "Madinaty":     { lat: 30.0840, lng: 31.6300 }
-    },
+  "Madinaty",
+
+  "Downtown",
+  "Abbassia",
+  "Sayeda Zeinab",
+  "Dar El Salam",
+  "El Sahel",
+  "Rod El Farag",
+  "Zeitoun",
+  "Hadayek El Qobba",
+  "Nozha",
+  "Tebbin",
+  "15th of May City",
+  "Katameya",
+
+  // ✅ New additions
+  "El Shorouk",
+  "New Administrative Capital"
+],
+
+cityCoords: {
+  "Cairo":              { lat: 30.0444, lng: 31.2357 },
+  "Maadi":              { lat: 29.9602, lng: 31.2569 },
+  "Heliopolis":         { lat: 30.0924, lng: 31.3204 },
+  "Nasr City":          { lat: 30.0626, lng: 31.3361 },
+  "New Cairo":          { lat: 30.0131, lng: 31.4961 },
+  "Zamalek":            { lat: 30.0626, lng: 31.2197 },
+  "Garden City":        { lat: 30.0385, lng: 31.2296 },
+  "Shubra":             { lat: 30.0730, lng: 31.2450 },
+  "Ain Shams":          { lat: 30.1290, lng: 31.3300 },
+  "El Marg":            { lat: 30.1640, lng: 31.3370 },
+  "Helwan":             { lat: 29.8414, lng: 31.3000 },
+  "Basatin":            { lat: 29.9953, lng: 31.2797 },
+  "Mokattam":           { lat: 30.0100, lng: 31.3030 },
+  "Obour":              { lat: 30.2280, lng: 31.4800 },
+  "Badr City":          { lat: 30.1360, lng: 31.7420 },
+  "El Rehab":           { lat: 30.0637, lng: 31.4900 },
+  "Madinaty":           { lat: 30.0840, lng: 31.6300 },
+
+  "Downtown":           { lat: 30.0478, lng: 31.2385 },
+  "Abbassia":           { lat: 30.0722, lng: 31.2778 },
+  "Sayeda Zeinab":      { lat: 30.0293, lng: 31.2381 },
+  "Dar El Salam":       { lat: 29.9950, lng: 31.2400 },
+  "El Sahel":           { lat: 30.0800, lng: 31.2500 },
+  "Rod El Farag":       { lat: 30.0808, lng: 31.2300 },
+  "Zeitoun":            { lat: 30.1133, lng: 31.3133 },
+  "Hadayek El Qobba":   { lat: 30.0985, lng: 31.2870 },
+  "Nozha":              { lat: 30.1060, lng: 31.3500 },
+  "Tebbin":             { lat: 29.8000, lng: 31.3000 },
+  "15th of May City":   { lat: 29.8500, lng: 31.3500 },
+  "Katameya":           { lat: 30.0200, lng: 31.4200 },
+  "El Shorouk":         { lat: 30.1400, lng: 31.6200 },
+  "New Administrative Capital": { lat: 30.0130, lng: 31.7000 }
+}
   },
-  {
-    governorate: "Giza",
-    coords: { lat: 30.0131, lng: 31.2089 },
-    cities: ["Giza", "Dokki", "Mohandessin", "Haram", "Faisal", "Sheikh Zayed", "6th of October",
-  "Hadayek October",
-  "Abu Rawash",
-  "Kerdasa",
-  "Imbaba",
-  "Warraq",
-  "Boulaq Dakrour",
-  "Ossim",
-  "Atfih"],
-    cityCoords: {
-      "Giza":          { lat: 30.0131, lng: 31.2089 },
-      "Dokki":         { lat: 30.0393, lng: 31.2117 },
-      "Mohandessin":   { lat: 30.0566, lng: 31.2007 },
-      "Haram":         { lat: 29.9772, lng: 31.1313 },
-      "Faisal":        { lat: 29.9925, lng: 31.1429 },
-      "Sheikh Zayed": { lat: 30.0177, lng: 30.9419 },
-      "6th of October":   { lat: 29.9397, lng: 30.9253 },
-      "Hadayek October":  { lat: 29.9500, lng: 30.9000 },
-      "Abu Rawash":       { lat: 30.0310, lng: 31.0780 },
-      "Kerdasa":          { lat: 30.0315, lng: 31.1070 },
-      "Imbaba":           { lat: 30.0710, lng: 31.2090 },
-      "Warraq":           { lat: 30.0890, lng: 31.2050 },
-      "Boulaq Dakrour":   { lat: 30.0350, lng: 31.1970 },
-      "Ossim":            { lat: 30.1200, lng: 31.1350 },
-      "Atfih":            { lat: 29.3700, lng: 31.2700 }
-        },
-  },
+ {
+  governorate: "Giza",
+  coords: { lat: 30.0131, lng: 31.2089 },
+
+  cities: [
+    "Giza",
+    "Dokki",
+    "Mohandessin",
+    "Haram",
+    "Faisal",
+    "Sheikh Zayed",
+    "6th of October",
+
+    "Abu Rawash",
+    "Kerdasa",
+    "Imbaba",
+    "Warraq",
+    "Boulaq Dakrour",
+    "Ossim",
+    "Atfih",
+
+    // ✅ Added (clean, non-overlapping)
+    "Agouza",
+    "Kit Kat",
+    "Talbia",
+    "Omrania",
+    "Saft El Laban",
+    "Hawamdeya",
+    "Badrasheen",
+    "Monib",
+    "Nazlet El Saman",
+    "Sakkara"
+  ],
+
+  cityCoords: {
+    "Giza":            { lat: 30.0131, lng: 31.2089 },
+    "Dokki":           { lat: 30.0393, lng: 31.2117 },
+    "Mohandessin":     { lat: 30.0566, lng: 31.2007 },
+    "Haram":           { lat: 29.9772, lng: 31.1313 },
+    "Faisal":          { lat: 29.9925, lng: 31.1429 },
+    "Sheikh Zayed":    { lat: 30.0177, lng: 30.9419 },
+    "6th of October":  { lat: 29.9397, lng: 30.9253 },
+
+    "Abu Rawash":      { lat: 30.0310, lng: 31.0780 },
+    "Kerdasa":         { lat: 30.0315, lng: 31.1070 },
+    "Imbaba":          { lat: 30.0710, lng: 31.2090 },
+    "Warraq":          { lat: 30.0890, lng: 31.2050 },
+    "Boulaq Dakrour":  { lat: 30.0350, lng: 31.1970 },
+    "Ossim":           { lat: 30.1200, lng: 31.1350 },
+    "Atfih":           { lat: 29.3700, lng: 31.2700 },
+    "Agouza":          { lat: 30.0580, lng: 31.2050 },
+    "Kit Kat":         { lat: 30.0665, lng: 31.2095 },
+    "Talbia":          { lat: 29.9900, lng: 31.1500 },
+    "Omrania":         { lat: 29.9700, lng: 31.1700 },
+    "Saft El Laban":   { lat: 30.0600, lng: 31.1800 },
+    "Hawamdeya":       { lat: 29.9000, lng: 31.2500 },
+    "Badrasheen":      { lat: 29.8500, lng: 31.3000 },
+    "Monib":           { lat: 29.9800, lng: 31.2100 },
+    "Nazlet El Saman": { lat: 29.9750, lng: 31.1350 },
+    "Sakkara":         { lat: 29.8710, lng: 31.2165 }
+  }
+},
   {
     governorate: "Alexandria",
     coords: { lat: 31.2001, lng: 29.9187 },
@@ -383,11 +456,15 @@ export default function Contributions() {
   const [searchLoading, setSearchLoading] = useState(false);
   const [searchError, setSearchError] = useState("");
   const [deleteConfirm, setDeleteConfirm] = useState(null); 
-  const [toast, setToast] = useState({ visible: false, type: "success" });
+  const [toast, setToast] = useState({ visible: false, type: "success", message: "" });
+const toastTimeout = useRef(null);
 
-const showToast = (type) => {
-  setToast({ visible: true, type });
-  setTimeout(() => setToast({ visible: false, type }), 3000);
+const showToast = (type, message) => {
+  if (toastTimeout.current) clearTimeout(toastTimeout.current);
+  setToast({ visible: true, type, message });
+  toastTimeout.current = setTimeout(() => {
+    setToast((t) => ({ ...t, visible: false }));
+  }, 3000);
 };
 
 
@@ -455,31 +532,77 @@ const showToast = (type) => {
 
 
   const handleLocationSearch = async () => {
-    if (!searchQuery.trim()) return;
-    setSearchLoading(true);
-    setSearchError("");
-    try {
-      const res = await fetch(
-        `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
-          searchQuery + ", Egypt"
-        )}&format=json&limit=1`
-      );
-      const data = await res.json();
-      if (data.length > 0) {
-        setForm((prev) => ({
-          ...prev,
-          lat: parseFloat(data[0].lat).toFixed(6),
-          lng: parseFloat(data[0].lon).toFixed(6),
-        }));
-      } else {
-        setSearchError("Location not found. Try a different search.");
-      }
-    } catch {
-      setSearchError("Search failed. Check your connection.");
-    } finally {
-      setSearchLoading(false);
+  if (!searchQuery.trim()) return;
+  setSearchLoading(true);
+  setSearchError("");
+
+  try {
+    const res = await fetch(
+      `https://nominatim.openstreetmap.org/search?q=${encodeURIComponent(
+        searchQuery + ", Egypt"
+      )}&format=json&limit=1`
+    );
+    const data = await res.json();
+
+    if (data.length === 0) {
+      setSearchError("Location not found. Try a different name.");
+      return;
     }
-  };
+
+    const { lat, lon } = data[0];
+    const parsedLat = parseFloat(lat);
+    const parsedLng = parseFloat(lon);
+
+    // reverse geocode for structured address
+    const revRes = await fetch(
+      `https://nominatim.openstreetmap.org/reverse?lat=${parsedLat}&lon=${parsedLng}&format=json`
+    );
+    const revData = await revRes.json();
+    const addr = revData.address || {};
+
+    const rawGov  = addr.state || addr.county || addr.province || "";
+    const rawCity = addr.city  || addr.town   || addr.village  || addr.suburb || "";
+
+    const matchedLocation = LOCATIONS.find((l) =>
+      rawGov.toLowerCase().includes(l.governorate.toLowerCase()) ||
+      l.governorate.toLowerCase().includes(rawGov.toLowerCase())
+    );
+
+    const matchedCity = matchedLocation?.cities.find((c) =>
+      rawCity.toLowerCase().includes(c.toLowerCase()) ||
+      c.toLowerCase().includes(rawCity.toLowerCase())
+    );
+
+    setForm((prev) => ({
+      ...prev,
+      lat: parsedLat.toFixed(6),
+      lng: parsedLng.toFixed(6),
+      ...(matchedLocation && { governorate: matchedLocation.governorate }),
+      ...(matchedCity     && { city: matchedCity }),
+    }));
+
+    setErrors((prev) => ({
+      ...prev,
+      lat: "",
+      lng: "",
+      ...(matchedLocation && { governorate: "" }),
+      ...(matchedCity     && { city: "" }),
+    }));
+
+    if (!matchedLocation) {
+      setSearchError("Location pinned — governorate not recognised, please select manually.");
+    } else if (!matchedCity) {
+      setSearchError(`Governorate set to ${matchedLocation.governorate} — city not recognised, please select manually.`);
+    } else {
+      setSearchError("");
+    }
+
+  } catch {
+    setSearchError("Search failed. Check your connection.");
+  } finally {
+    setSearchLoading(false);
+  }
+};
 
   const isValidRating = (value) => {
   if (value === "" || value === null || value === undefined) return false;
@@ -503,27 +626,25 @@ const showToast = (type) => {
   };
 
   const handleSave = () => {
-    const e = validate();
-     if (Object.keys(e).length > 0) {
-    setErrors(e);
+  const e = validate();
 
+  if (Object.keys(e).length > 0) {
+    setErrors(e);
     const firstKey = FIELD_ORDER.find((key) => e[key]);
     const missingCount = Object.keys(e).length;
     const firstMessage = e[firstKey] || "Please fill in the required fields";
-
-    showToast(
-      "error",
-      missingCount > 1 ? `${firstMessage} (+${missingCount - 1} more)` : firstMessage
-    );
+    showToast("error", missingCount > 1 ? `${firstMessage} (+${missingCount - 1} more)` : firstMessage);
     return;
   }
-    const updatedContributions = contributions.map((p) =>
-      p.id === editTarget.id ? { ...p, ...form } : p
-    );
-    showToast("update");
-    updateUser({ contributions: updatedContributions });
-    closeEdit();
-  };
+
+  const updatedContributions = contributions.map((p) =>
+    p.id === editTarget.id ? { ...p, ...form } : p
+  );
+
+  updateUser({ contributions: updatedContributions });
+  showToast("update", "Place updated");
+  closeEdit();
+};
 
 
  const handleDelete = async (id) => {
@@ -557,11 +678,7 @@ const showToast = (type) => {
 
   return (
     <main className="contributions-main">
-       <Toast
-  message={toast.type === "delete" ? "Place deleted successfully" : "Place edited successfully"}
-  visible={toast.visible}
-  type={toast.type}
-/>
+      <Toast message={toast.message} visible={toast.visible} type={toast.type} />
       <div className="contributions-page">
       
         <p className="contributions-eyebrow">YOUR DISCOVERED PLACES</p>
