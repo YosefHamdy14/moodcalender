@@ -1,9 +1,11 @@
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useState, useRef } from "react";
+import { useState, useRef ,useEffect } from "react";
 import Card from "../components/Card";
 import PlaceCard from "../components/AddPlaceCard";
 import Toast from "../components/Toast";
+import { setUserProfilePic , getUserProfilePic } from "../components/PicCache";
+
 import '../css/profile.css'
 
 
@@ -28,6 +30,14 @@ export default function Profile() {
     }, 3000);
   };
 
+  useEffect(() => {
+  if (user?.email && !user.profilePic) {
+    getUserProfilePic(user.email).then((pic) => {
+      if (pic) updateUser({ profilePic: pic });
+    });
+  }
+}, [user?.email]);
+
   if (!user) {
   return <h2>Please login first</h2>;
   }
@@ -39,21 +49,22 @@ export default function Profile() {
     });
   };
   
-  const handlePicChange = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    
-    if (file.size > 2 * 1024 * 1024) {
-      alert("Image must be under 2MB");
-      return;
-    }
+ const handlePicChange = (e) => {
+  const file = e.target.files[0];
+  if (!file) return;
 
-    const reader = new FileReader();
-    reader.onloadend = () => {
-      updateUser({ profilePic: reader.result });
-    };
-    reader.readAsDataURL(file);
+  if (file.size > 2 * 1024 * 1024) {
+    alert("Image must be under 2MB");
+    return;
+  }
+
+  const reader = new FileReader();
+  reader.onloadend = async () => {
+    await setUserProfilePic(user.email, reader.result); 
+    updateUser({ profilePic: reader.result });           
   };
+  reader.readAsDataURL(file);
+};
   
   const handleOpenEdit = () => {
     setFormData({

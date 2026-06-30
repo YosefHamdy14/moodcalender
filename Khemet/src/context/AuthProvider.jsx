@@ -67,6 +67,10 @@ export function AuthProvider({ children }) {
     const updatedUser = { ...user, favorites: updatedFavorites };
     setUser(updatedUser);
     localStorage.setItem("user", JSON.stringify(updatedUser));
+    const safeForStorage = {
+    ...updatedUser,
+    contributions: (updatedUser.contributions || []).map(stripImages),
+  };
     syncUserInStorage(safeForStorage);
   };
 
