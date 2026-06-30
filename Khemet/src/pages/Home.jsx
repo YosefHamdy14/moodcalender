@@ -10,56 +10,46 @@ import st from "../assets/hieroglyph-pattern.png";
 import '../index.css';
 
 export default function Home() {
-  const { user } = useAuth();
-  const [featuredPlaces, setFeaturedPlaces] = useState([]);
-
-const INITIAL_COUNT = 3;
-function getVisibleCount() {
-  const grid = document.querySelector(".places");
-  if (!grid) return INITIAL_COUNT;
-  const cols = window
-    .getComputedStyle(grid)
-    .gridTemplateColumns
-    .split(" ").length;
-
-  let count = INITIAL_COUNT;
-  while (
-    count % cols !== 0 &&
-    count < placesData.length
-  ) {
-    count++;
-  }
-  return count;
-}
-
-const [visibleCount, setVisibleCount] = useState(INITIAL_COUNT);
-
-useEffect(() => {
-  const updateVisibleCount = () => {
-    setVisibleCount(getVisibleCount());
-  };
-  updateVisibleCount();
-
-  window.addEventListener("resize", updateVisibleCount);
-
-  return () =>
-    window.removeEventListener("resize", updateVisibleCount);
-}, []);
+ const { user } = useAuth();
+const [places, setPlaces] = useState([]);
+const [visibleCount, setVisibleCount] = useState(6);
 
 useEffect(() => {
   const sortedPlaces = [...placesData].sort((a, b) => {
     if (b.rating !== a.rating) {
       return b.rating - a.rating;
     }
-
     return b.reviews - a.reviews;
   });
+  setPlaces(sortedPlaces);
+}, []);
 
-  setFeaturedPlaces(
-    sortedPlaces.slice(0, visibleCount)
-  );
-}, [visibleCount]);
-  return (
+useEffect(() => {
+  const updateVisibleCount = () => {
+    const grid = document.querySelector(".places");
+    if (!grid) return;
+
+    const cols = window
+      .getComputedStyle(grid)
+      .gridTemplateColumns
+      .split(" ")
+      .filter((c) => c !== "1fr" && c !== "").length || 3;
+
+    let count = 3;
+    while (count % cols !== 0 && count < places.length) {
+      count++;
+    }
+    setVisibleCount(Math.min(count, places.length));
+  };
+
+  updateVisibleCount();
+  window.addEventListener("resize", updateVisibleCount);
+  return () => window.removeEventListener("resize", updateVisibleCount);
+}, [places]);
+
+const visiblePlaces = places.slice(0, visibleCount);
+
+return (
     <main className="home">
       <section className="hero">
         <div className="hero-content">
@@ -359,42 +349,43 @@ useEffect(() => {
       </section>
 
 <section className="featured">
-  <div className="featured-header">
-    <div className="featured-header-left">
-      <p className="popular-h5">
-        <svg version="1.1" className="popular-svg" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 290.658 290.658" xmlSpace="preserve" fill="#C9A84C" stroke="#C9A84C">
+    <div className="featured-header">
+      <div className="featured-header-left">
+        <p className="popular-h5">
+          <svg version="1.1" className="popular-svg" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink" width="34" height="34" viewBox="0 0 290.658 290.658" xmlSpace="preserve" fill="#C9A84C" stroke="#C9A84C">
+            <g strokeWidth="0"></g>
+            <g strokeLinecap="round" strokeLinejoin="round"></g>
+            <g>
+              <g>
+                <rect y="139.474" width="290.658" height="5.711" fill="#C9A84C" />
+              </g>
+            </g>
+          </svg>
+          POPULAR RIGHT NOW
+        </p>
+        <h2 className="popular-tit">Trending across Egypt</h2>
+        <p className="popular-det">What other explorers are saving this season.</p>
+      </div>
+      <Link className="ex-more" to="/feed">
+        <svg className="ex-more-svg" width="24" height="24" viewBox="0 0 24 24" id="_24x24_On_Light_Next" data-name="24x24/On Light/Next" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" strokeWidth="0.00024">
           <g strokeWidth="0"></g>
           <g strokeLinecap="round" strokeLinejoin="round"></g>
           <g>
-            <g>
-              <rect y="139.474" width="290.658" height="5.711" fill="#C9A84C" />
-            </g>
+            <rect id="view-box" width="24" height="24" fill="#7A6040" opacity="0" />
+            <path id="Shape" d="M10.22,9.28a.75.75,0,0,1,0-1.06l2.72-2.72H.75A.75.75,0,0,1,.75,4H12.938L10.22,1.281A.75.75,0,1,1,11.281.22l4,4a.749.749,0,0,1,0,1.06l-4,4a.75.75,0,0,1-1.061,0Z" transform="translate(4.25 7.25)" fill="#7A6040" />
           </g>
         </svg>
-        POPULAR RIGHT NOW
-      </p>
-      <h2 className="popular-tit">Trending across Egypt</h2>
-      <p className="popular-det">What other explorers are saving this season.</p>
+        Explore More
+      </Link>
     </div>
-    <Link className="ex-more" to="/feed">
-      <svg className="ex-more-svg" width="24" height="24" viewBox="0 0 24 24" id="_24x24_On_Light_Next" data-name="24x24/On Light/Next" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" strokeWidth="0.00024">
-        <g strokeWidth="0"></g>
-        <g strokeLinecap="round" strokeLinejoin="round"></g>
-        <g>
-          <rect id="view-box" width="24" height="24" fill="#7A6040" opacity="0" />
-          <path id="Shape" d="M10.22,9.28a.75.75,0,0,1,0-1.06l2.72-2.72H.75A.75.75,0,0,1,.75,4H12.938L10.22,1.281A.75.75,0,1,1,11.281.22l4,4a.749.749,0,0,1,0,1.06l-4,4a.75.75,0,0,1-1.061,0Z" transform="translate(4.25 7.25)" fill="#7A6040" />
-        </g>
-      </svg>
-      Explore More
-    </Link>
-  </div>
 
-  <div className="places">
-    {featuredPlaces.map((place) => (
-      <Card key={place.id} place={place} />
-    ))}
-  </div>
-</section>
+    <div className="places">
+      {visiblePlaces.map((place) => (
+        <Card key={place.id} place={place} />
+      ))}
+    </div>
+  </section>
+
 
       <section className="trip-section">
         <div className="trip-section-cont">
