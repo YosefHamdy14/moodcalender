@@ -12,50 +12,33 @@ function PlanCard({
       <div className="plan-image-wrapper">
         <img
           src={plan.places[0]?.coverImage}
-          alt={plan.name}
+          alt={plan.title}
         />
 
         <span className="plan-badge">
-          {plan.name}
+          {plan.title}
         </span>
       </div>
 
       <div className="plan-content">
 
         <h3 className="plan-title">
-          {plan.name === "Plan A"
-            ? "Balanced Egypt"
-            : plan.name === "Plan B"
-            ? "Adventure Trail"
-            : "Relaxed Pilgrimage"}
-        </h3>
-
+  {plan.title}
+</h3>
         <p className="plan-subtitle">
           {days} Day Journey
         </p>
 
         <hr />
 
-        {buildItinerary(plan.places).map(
-          (dayPlaces, dayIndex) => (
-            <div
-              className="day-row"
-              key={dayIndex}
-            >
-              <span className="day-number">
-                {dayIndex + 1}
-              </span>
-
-              <span className="place-name">
-                {dayPlaces
-                  .map(
-                    (place) => place.title
-                  )
-                  .join(" • ")}
-              </span>
-            </div>
-          )
-        )}
+        {buildItinerary(plan.places).map((dayObj) => (
+  <div className="day-row" key={dayObj.day}>
+    <span className="day-number">{dayObj.day}</span>
+    <span className="place-name">
+      {dayObj.places.map((place) => place.title).join(" • ")}
+    </span>
+  </div>
+))}
 
         <div className="plan-buttons">
 

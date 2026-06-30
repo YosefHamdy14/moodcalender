@@ -495,6 +495,8 @@
       "https://id-preview--bf577643-e680-4291-8f97-117ae9f346e0.lovable.app/__l5e/assets-v1/574124e0-0145-4e24-9d11-814ea25e9ff6/22-c.jpg"
     ]
   },
+
+  
   {
     "id": 23,
     "title": "Philae Temple",
@@ -1129,5 +1131,1087 @@
       "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/261dbdd8-873a-4132-837a-47d570e8896b/50a.jpg",
       "https://id-preview--5c60554b-8073-479f-9d4a-c9c76b3c6ea1.lovable.app/__l5e/assets-v1/8c37baf5-c312-4e38-b31a-74a29dd80fed/50b.jpg"
     ]
-  }
+  },
+
+  {
+  "id": 51,
+  "title": "Hurghada Marina",
+  "description": "A lively waterfront promenade filled with restaurants, cafés, yachts and nightlife.",
+  "longdescription": "Hurghada Marina is one of the city's most vibrant destinations, offering stunning Red Sea views, luxury yachts, seafood restaurants, cafés and entertainment. It is especially beautiful during sunset and in the evening when the promenade lights up.",
+  "lat": 27.2316,
+  "lng": 33.8458,
+  "tags": ["beach","food","modern","photography","romantic"],
+  "city": "Hurghada",
+  "rating": 4.8,
+  "reviews": 8123,
+  "coverImage": "/images/hurghada/marina.jpg",
+  "gallery": [
+    "/images/hurghada/marina1.jpg",
+    "/images/hurghada/marina2.jpg",
+    "/images/hurghada/marina3.jpg"
+  ]
+},
+{
+  "id": 52,
+  "title": "Giftun Island",
+  "description": "White sandy beaches with crystal-clear waters perfect for snorkeling.",
+  "longdescription": "Giftun Island is one of Egypt's most famous Red Sea islands. Visitors enjoy snorkeling, diving, swimming and relaxing on pristine beaches surrounded by coral reefs.",
+  "lat": 27.2235,
+  "lng": 33.9217,
+  "tags": ["beach","nature","diving","adventure","photography"],
+  "city": "Hurghada",
+  "rating": 4.9,
+  "reviews": 12750,
+  "coverImage": "/images/hurghada/giftun.jpg",
+  "gallery": [
+    "/images/hurghada/giftun1.jpg",
+    "/images/hurghada/giftun2.jpg",
+    "/images/hurghada/giftun3.jpg"
+  ]
+},
+{
+  "id": 53,
+  "title": "Mahmya Island",
+  "description": "A peaceful island with turquoise water and luxury beach facilities.",
+  "longdescription": "Mahmya Island offers visitors a premium Red Sea beach experience with crystal-clear waters, soft white sand and excellent snorkeling opportunities.",
+  "lat": 27.195,
+  "lng": 33.93,
+  "tags": ["beach","nature","romantic","photography"],
+  "city": "Hurghada",
+  "rating": 4.9,
+  "reviews": 6542,
+  "coverImage": "/images/hurghada/mahmya.jpg",
+  "gallery": [
+    "/images/hurghada/mahmya1.jpg",
+    "/images/hurghada/mahmya2.jpg",
+    "/images/hurghada/mahmya3.jpg"
+  ]
+},
+{
+  "id": 54,
+  "title": "Hurghada Desert Safari",
+  "description": "ATV rides, Bedouin villages and desert sunsets.",
+  "longdescription": "Experience the Eastern Desert by quad bike or jeep, visit Bedouin camps, enjoy traditional tea and witness breathtaking sunsets over the mountains.",
+  "lat": 27.1,
+  "lng": 33.65,
+  "tags": ["adventure","nature","photography","cultural"],
+  "city": "Hurghada",
+  "rating": 4.7,
+  "reviews": 9320,
+  "coverImage": "/images/hurghada/safari.jpg",
+  "gallery": [
+    "/images/hurghada/safari1.jpg",
+    "/images/hurghada/safari2.jpg",
+    "/images/hurghada/safari3.jpg"
+  ]
+},
+{
+  "id": 55,
+  "title": "Abu Tig Marina",
+  "description": "Luxury marina surrounded by restaurants and yachts.",
+  "longdescription": "Abu Tig Marina is the heart of El Gouna, offering waterfront dining, shopping, luxury boats and vibrant nightlife.",
+  "lat": 27.395,
+  "lng": 33.678,
+  "tags": ["modern","food","romantic","photography"],
+  "city": "El Gouna",
+  "rating": 4.8,
+  "reviews": 4860,
+  "coverImage": "/images/elgouna/marina.jpg",
+  "gallery": [
+    "/images/elgouna/marina1.jpg",
+    "/images/elgouna/marina2.jpg",
+    "/images/elgouna/marina3.jpg"
+  ]
+},
+{
+  "id": 56,
+  "title": "Sliders Cable Park",
+  "description": "The largest cable wakeboarding park in the Middle East.",
+  "longdescription": "A popular destination for wakeboarding enthusiasts of all levels with professional facilities, restaurants and relaxing lakeside views.",
+  "lat": 27.402,
+  "lng": 33.674,
+  "tags": ["adventure","modern","nature"],
+  "city": "El Gouna",
+  "rating": 4.7,
+  "reviews": 2143,
+  "coverImage": "/images/elgouna/sliders.jpg",
+  "gallery": [
+    "/images/elgouna/sliders1.jpg",
+    "/images/elgouna/sliders2.jpg",
+    "/images/elgouna/sliders3.jpg"
+  ]
+},
+{
+  "id": 57,
+  "title": "Marsa Mubarak",
+  "description": "One of the best snorkeling spots in Marsa Alam.",
+  "longdescription": "Marsa Mubarak is famous for its sea turtles, dugongs and vibrant coral reefs, making it one of Egypt's top underwater destinations.",
+  "lat": 25.737,
+  "lng": 34.929,
+  "tags": ["diving","nature","adventure","photography"],
+  "city": "Marsa Alam",
+  "rating": 4.9,
+  "reviews": 5400,
+  "coverImage": "/images/marsaalam/mubarak.jpg",
+  "gallery": [
+    "/images/marsaalam/mubarak1.jpg",
+    "/images/marsaalam/mubarak2.jpg",
+    "/images/marsaalam/mubarak3.jpg"
+  ]
+},
+{
+  "id": 58,
+  "title": "Sataya Reef",
+  "description": "Swim with wild spinner dolphins in crystal-clear waters.",
+  "longdescription": "Sataya Reef is internationally known for its resident pod of spinner dolphins and spectacular coral reefs.",
+  "lat": 24.95,
+  "lng": 35.12,
+  "tags": ["diving","adventure","nature","photography"],
+  "city": "Marsa Alam",
+  "rating": 4.9,
+  "reviews": 7325,
+  "coverImage": "/images/marsaalam/sataya.jpg",
+  "gallery": [
+    "/images/marsaalam/sataya1.jpg",
+    "/images/marsaalam/sataya2.jpg",
+    "/images/marsaalam/sataya3.jpg"
+  ]
+},
+{
+  "id": 59,
+  "title": "Wadi El Gemal National Park",
+  "description": "A protected desert and marine national park.",
+  "longdescription": "The park combines mountains, mangroves, coral reefs and desert wildlife, making it one of Egypt's richest natural reserves.",
+  "lat": 24.65,
+  "lng": 35.08,
+  "tags": ["nature","adventure","photography","hidden"],
+  "city": "Marsa Alam",
+  "rating": 4.8,
+  "reviews": 2190,
+  "coverImage": "/images/marsaalam/wadi.jpg",
+  "gallery": [
+    "/images/marsaalam/wadi1.jpg",
+    "/images/marsaalam/wadi2.jpg",
+    "/images/marsaalam/wadi3.jpg"
+  ]
+},
+{
+  "id": 60,
+  "title": "El Qulaan Mangrove Beach",
+  "description": "A peaceful hidden beach surrounded by mangrove forests.",
+  "longdescription": "El Qulaan is one of Egypt's hidden gems where visitors can kayak, relax and enjoy untouched nature and calm turquoise waters.",
+  "lat": 24.4,
+  "lng": 35.2,
+  "tags": ["nature","hidden","romantic","photography","beach"],
+  "city": "Marsa Alam",
+  "rating": 4.8,
+  "reviews": 1735,
+  "coverImage": "/images/marsaalam/qulaan.jpg",
+  "gallery": [
+    "/images/marsaalam/qulaan1.jpg",
+    "/images/marsaalam/qulaan2.jpg",
+    "/images/marsaalam/qulaan3.jpg"
+  ]
+},
+{
+  "id": 61,
+  "title": "Siwa Salt Lakes",
+  "description": "Crystal-clear salt lakes famous for their incredible buoyancy.",
+  "longdescription": "The Salt Lakes of Siwa are among Egypt's most unique natural attractions. Their extremely high salt concentration allows visitors to float effortlessly while enjoying breathtaking turquoise waters in the middle of the desert.",
+  "lat": 29.1934,
+  "lng": 25.5193,
+  "tags": ["nature","photography","hidden","romantic"],
+  "city": "Siwa",
+  "rating": 4.9,
+  "reviews": 4870,
+  "coverImage": "/images/siwa/salt-lake.jpg",
+  "gallery": [
+    "/images/siwa/salt1.jpg",
+    "/images/siwa/salt2.jpg",
+    "/images/siwa/salt3.jpg"
+  ]
+},
+{
+  "id": 62,
+  "title": "Cleopatra's Spring",
+  "description": "A famous natural spring surrounded by palm trees.",
+  "longdescription": "Legend says Queen Cleopatra herself swam here. Today it's a popular place to cool off, relax and enjoy traditional Siwan cafés nearby.",
+  "lat": 29.2054,
+  "lng": 25.5188,
+  "tags": ["nature","historical","photography","romantic"],
+  "city": "Siwa",
+  "rating": 4.7,
+  "reviews": 3925,
+  "coverImage": "/images/siwa/cleopatra.jpg",
+  "gallery": [
+    "/images/siwa/cleo1.jpg",
+    "/images/siwa/cleo2.jpg",
+    "/images/siwa/cleo3.jpg"
+  ]
+},
+{
+  "id": 63,
+  "title": "Shali Fortress",
+  "description": "Ancient mud-brick fortress in the heart of Siwa.",
+  "longdescription": "Built in the 13th century, Shali Fortress overlooks Siwa Oasis and offers spectacular panoramic sunset views and fascinating architecture.",
+  "lat": 29.2048,
+  "lng": 25.5197,
+  "tags": ["historical","cultural","photography","mysterious"],
+  "city": "Siwa",
+  "rating": 4.8,
+  "reviews": 3410,
+  "coverImage": "/images/siwa/shali.jpg",
+  "gallery": [
+    "/images/siwa/shali1.jpg",
+    "/images/siwa/shali2.jpg",
+    "/images/siwa/shali3.jpg"
+  ]
+},
+{
+  "id": 64,
+  "title": "Mountain of the Dead",
+  "description": "Ancient mountain containing hundreds of rock-cut tombs.",
+  "longdescription": "Dating back to the Greco-Roman era, the Mountain of the Dead is one of Siwa's most fascinating archaeological sites with colorful ancient tomb paintings.",
+  "lat": 29.2089,
+  "lng": 25.5322,
+  "tags": ["historical","mysterious","photography"],
+  "city": "Siwa",
+  "rating": 4.7,
+  "reviews": 2358,
+  "coverImage": "/images/siwa/deadmountain.jpg",
+  "gallery": [
+    "/images/siwa/dead1.jpg",
+    "/images/siwa/dead2.jpg",
+    "/images/siwa/dead3.jpg"
+  ]
+},
+{
+  "id": 65,
+  "title": "Temple of the Oracle",
+  "description": "The legendary temple visited by Alexander the Great.",
+  "longdescription": "One of Egypt's most mysterious historical sites where Alexander the Great is believed to have consulted the Oracle of Amun in 331 BC.",
+  "lat": 29.2168,
+  "lng": 25.5556,
+  "tags": ["historical","mysterious","photography","cultural"],
+  "city": "Siwa",
+  "rating": 4.8,
+  "reviews": 2945,
+  "coverImage": "/images/siwa/oracle.jpg",
+  "gallery": [
+    "/images/siwa/oracle1.jpg",
+    "/images/siwa/oracle2.jpg",
+    "/images/siwa/oracle3.jpg"
+  ]
+},
+{
+  "id": 66,
+  "title": "Magic Lake",
+  "description": "A colorful desert lake surrounded by golden dunes.",
+  "longdescription": "Magic Lake changes color throughout the day depending on sunlight. Visitors can swim, sandboard and enjoy one of Fayoum's most beautiful landscapes.",
+  "lat": 29.2902,
+  "lng": 30.4326,
+  "tags": ["nature","adventure","photography","hidden"],
+  "city": "Fayoum",
+  "rating": 4.8,
+  "reviews": 5320,
+  "coverImage": "/images/fayoum/magiclake.jpg",
+  "gallery": [
+    "/images/fayoum/magic1.jpg",
+    "/images/fayoum/magic2.jpg",
+    "/images/fayoum/magic3.jpg"
+  ]
+},
+{
+  "id": 67,
+  "title": "Wadi El Rayan",
+  "description": "Egypt's only waterfalls located inside a protected reserve.",
+  "longdescription": "Wadi El Rayan is famous for its waterfalls, lakes, wildlife and peaceful desert scenery, making it one of Fayoum's most visited natural attractions.",
+  "lat": 29.245,
+  "lng": 30.445,
+  "tags": ["nature","photography","adventure"],
+  "city": "Fayoum",
+  "rating": 4.9,
+  "reviews": 8354,
+  "coverImage": "/images/fayoum/rayan.jpg",
+  "gallery": [
+    "/images/fayoum/rayan1.jpg",
+    "/images/fayoum/rayan2.jpg",
+    "/images/fayoum/rayan3.jpg"
+  ]
+},
+{
+  "id": 68,
+  "title": "Wadi El Hitan",
+  "description": "UNESCO World Heritage Site famous for whale fossils.",
+  "longdescription": "Known as the Valley of the Whales, Wadi El Hitan preserves hundreds of fossilized whales dating back over 40 million years, offering an extraordinary journey into Earth's history.",
+  "lat": 29.2718,
+  "lng": 30.1779,
+  "tags": ["nature","historical","photography","hidden"],
+  "city": "Fayoum",
+  "rating": 4.9,
+  "reviews": 6182,
+  "coverImage": "/images/fayoum/whales.jpg",
+  "gallery": [
+    "/images/fayoum/whales1.jpg",
+    "/images/fayoum/whales2.jpg",
+    "/images/fayoum/whales3.jpg"
+  ]
+},
+{
+  "id": 69,
+  "title": "Tunis Village",
+  "description": "A charming artistic village overlooking Lake Qarun.",
+  "longdescription": "Known for pottery workshops, boutique lodges and peaceful scenery, Tunis Village is one of Egypt's most beautiful countryside escapes.",
+  "lat": 29.434,
+  "lng": 30.648,
+  "tags": ["cultural","food","photography","romantic","hidden"],
+  "city": "Fayoum",
+  "rating": 4.8,
+  "reviews": 4700,
+  "coverImage": "/images/fayoum/tunis.jpg",
+  "gallery": [
+    "/images/fayoum/tunis1.jpg",
+    "/images/fayoum/tunis2.jpg",
+    "/images/fayoum/tunis3.jpg"
+  ]
+},
+{
+  "id": 70,
+  "title": "Lake Qarun",
+  "description": "One of the oldest natural lakes in the world.",
+  "longdescription": "Lake Qarun is famous for birdwatching, fishing, sunsets and peaceful lakeside scenery. It is one of Fayoum's most iconic natural attractions.",
+  "lat": 29.503,
+  "lng": 30.507,
+  "tags": ["nature","photography","romantic"],
+  "city": "Fayoum",
+  "rating": 4.7,
+  "reviews": 5241,
+  "coverImage": "/images/fayoum/qarun.jpg",
+  "gallery": [
+    "/images/fayoum/qarun1.jpg",
+    "/images/fayoum/qarun2.jpg",
+    "/images/fayoum/qarun3.jpg"
+  ]
+},
+{
+  "id": 71,
+  "title": "Mount Sinai",
+  "description": "Egypt's legendary mountain known for breathtaking sunrise hikes.",
+  "longdescription": "Mount Sinai is one of the world's most famous pilgrimage destinations. Visitors hike overnight to witness an unforgettable sunrise from the summit where Moses is believed to have received the Ten Commandments.",
+  "lat": 28.5391,
+  "lng": 33.9750,
+  "tags": ["historical","adventure","nature","photography","mysterious"],
+  "city": "Saint Catherine",
+  "rating": 4.9,
+  "reviews": 11240,
+  "coverImage": "/images/saintcatherine/mount-sinai.jpg",
+  "gallery": [
+    "/images/saintcatherine/mount1.jpg",
+    "/images/saintcatherine/mount2.jpg",
+    "/images/saintcatherine/mount3.jpg"
+  ]
+},
+{
+  "id": 72,
+  "title": "Saint Catherine's Monastery",
+  "description": "One of the oldest continuously operating Christian monasteries.",
+  "longdescription": "Built in the 6th century, Saint Catherine's Monastery houses priceless religious manuscripts, icons and the legendary Burning Bush.",
+  "lat": 28.5559,
+  "lng": 33.9754,
+  "tags": ["historical","cultural","mysterious","photography"],
+  "city": "Saint Catherine",
+  "rating": 4.9,
+  "reviews": 9450,
+  "coverImage": "/images/saintcatherine/monastery.jpg",
+  "gallery": [
+    "/images/saintcatherine/monastery1.jpg",
+    "/images/saintcatherine/monastery2.jpg",
+    "/images/saintcatherine/monastery3.jpg"
+  ]
+},
+{
+  "id": 73,
+  "title": "Blue Hole",
+  "description": "One of the world's most famous diving destinations.",
+  "longdescription": "Located near Dahab, the Blue Hole attracts experienced divers from around the world thanks to its stunning coral reefs and dramatic underwater landscape.",
+  "lat": 28.5725,
+  "lng": 34.5360,
+  "tags": ["diving","adventure","nature","photography"],
+  "city": "Dahab",
+  "rating": 4.9,
+  "reviews": 15620,
+  "coverImage": "/images/dahab/bluehole.jpg",
+  "gallery": [
+    "/images/dahab/bluehole1.jpg",
+    "/images/dahab/bluehole2.jpg",
+    "/images/dahab/bluehole3.jpg"
+  ]
+},
+{
+  "id": 74,
+  "title": "Blue Lagoon",
+  "description": "A peaceful turquoise lagoon perfect for camping and kitesurfing.",
+  "longdescription": "The Blue Lagoon offers crystal-clear shallow waters surrounded by mountains, making it one of Sinai's most relaxing destinations.",
+  "lat": 28.7164,
+  "lng": 34.6760,
+  "tags": ["beach","nature","romantic","photography","hidden"],
+  "city": "Dahab",
+  "rating": 4.8,
+  "reviews": 5170,
+  "coverImage": "/images/dahab/bluelagoon.jpg",
+  "gallery": [
+    "/images/dahab/lagoon1.jpg",
+    "/images/dahab/lagoon2.jpg",
+    "/images/dahab/lagoon3.jpg"
+  ]
+},
+{
+  "id": 75,
+  "title": "Three Pools",
+  "description": "Beautiful snorkeling area with colorful coral reefs.",
+  "longdescription": "Three Pools is one of Dahab's hidden treasures where visitors enjoy snorkeling, swimming and relaxing in calm crystal-clear waters.",
+  "lat": 28.4830,
+  "lng": 34.5148,
+  "tags": ["diving","beach","nature","photography"],
+  "city": "Dahab",
+  "rating": 4.8,
+  "reviews": 4230,
+  "coverImage": "/images/dahab/threepools.jpg",
+  "gallery": [
+    "/images/dahab/three1.jpg",
+    "/images/dahab/three2.jpg",
+    "/images/dahab/three3.jpg"
+  ]
+},
+{
+  "id": 76,
+  "title": "Colored Canyon",
+  "description": "Spectacular sandstone canyon with colorful rock formations.",
+  "longdescription": "The Colored Canyon is one of Sinai's natural wonders featuring narrow passages, towering cliffs and incredible red, yellow and purple rock layers.",
+  "lat": 29.0200,
+  "lng": 34.7020,
+  "tags": ["adventure","nature","photography","hidden"],
+  "city": "Nuweiba",
+  "rating": 4.8,
+  "reviews": 3380,
+  "coverImage": "/images/nuweiba/coloredcanyon.jpg",
+  "gallery": [
+    "/images/nuweiba/canyon1.jpg",
+    "/images/nuweiba/canyon2.jpg",
+    "/images/nuweiba/canyon3.jpg"
+  ]
+},
+{
+  "id": 77,
+  "title": "Ras Shaitan",
+  "description": "A peaceful beach camp destination famous for stargazing.",
+  "longdescription": "Ras Shaitan offers rustic beach camps, crystal-clear waters and unforgettable nights under the stars away from busy tourist areas.",
+  "lat": 29.1004,
+  "lng": 34.6998,
+  "tags": ["beach","hidden","romantic","nature"],
+  "city": "Nuweiba",
+  "rating": 4.8,
+  "reviews": 2850,
+  "coverImage": "/images/nuweiba/rasshaitan.jpg",
+  "gallery": [
+    "/images/nuweiba/ras1.jpg",
+    "/images/nuweiba/ras2.jpg",
+    "/images/nuweiba/ras3.jpg"
+  ]
+},
+{
+  "id": 78,
+  "title": "Castle Zaman",
+  "description": "A medieval-style fortress restaurant overlooking the Gulf of Aqaba.",
+  "longdescription": "Castle Zaman combines stunning architecture, panoramic sea views and slow-cooked traditional meals in one unforgettable experience.",
+  "lat": 29.0870,
+  "lng": 34.7150,
+  "tags": ["food","romantic","photography","modern"],
+  "city": "Taba",
+  "rating": 4.8,
+  "reviews": 3725,
+  "coverImage": "/images/taba/castlezaman.jpg",
+  "gallery": [
+    "/images/taba/zaman1.jpg",
+    "/images/taba/zaman2.jpg",
+    "/images/taba/zaman3.jpg"
+  ]
+},
+{
+  "id": 79,
+  "title": "Taba Heights",
+  "description": "Luxury beach resort destination on the Gulf of Aqaba.",
+  "longdescription": "Taba Heights is known for luxury resorts, clear waters, diving, golf courses and breathtaking mountain-meets-sea scenery.",
+  "lat": 29.4922,
+  "lng": 34.8963,
+  "tags": ["beach","romantic","diving","photography"],
+  "city": "Taba",
+  "rating": 4.8,
+  "reviews": 5980,
+  "coverImage": "/images/taba/heights.jpg",
+  "gallery": [
+    "/images/taba/heights1.jpg",
+    "/images/taba/heights2.jpg",
+    "/images/taba/heights3.jpg"
+  ]
+},
+{
+  "id": 80,
+  "title": "Ras Mohammed National Park",
+  "description": "Egypt's most famous marine national park.",
+  "longdescription": "Located at the southern tip of Sinai, Ras Mohammed National Park is internationally renowned for coral reefs, diving sites, mangroves and extraordinary marine biodiversity.",
+  "lat": 27.7246,
+  "lng": 34.2589,
+  "tags": ["diving","nature","adventure","photography","beach"],
+  "city": "Sharm El Sheikh",
+  "rating": 5.0,
+  "reviews": 18450,
+  "coverImage": "/images/sharm/rasmohammed.jpg",
+  "gallery": [
+    "/images/sharm/ras1.jpg",
+    "/images/sharm/ras2.jpg",
+    "/images/sharm/ras3.jpg"
+  ]
+},
+{
+  "id": 81,
+  "title": "Dendera Temple Complex",
+  "description": "One of Egypt's best-preserved temple complexes dedicated to Hathor.",
+  "longdescription": "Located north of Luxor, Dendera Temple is famous for its colorful astronomical ceiling, massive columns and remarkably preserved carvings that make it one of Egypt's most impressive ancient temples.",
+  "lat": 26.1427,
+  "lng": 32.6704,
+  "tags": ["historical","photography","cultural","mysterious"],
+  "city": "Qena",
+  "rating": 4.9,
+  "reviews": 5421,
+  "coverImage": "/images/qena/dendera.jpg",
+  "gallery": [
+    "/images/qena/dendera1.jpg",
+    "/images/qena/dendera2.jpg",
+    "/images/qena/dendera3.jpg"
+  ]
+},
+{
+  "id": 82,
+  "title": "Abydos Temple",
+  "description": "Ancient temple built by Seti I with stunning hieroglyphics.",
+  "longdescription": "The Temple of Seti I at Abydos is considered one of Egypt's finest temples, famous for the Abydos King List and beautifully preserved reliefs.",
+  "lat": 26.1844,
+  "lng": 31.9198,
+  "tags": ["historical","mysterious","photography"],
+  "city": "Sohag",
+  "rating": 4.9,
+  "reviews": 4178,
+  "coverImage": "/images/sohag/abydos.jpg",
+  "gallery": [
+    "/images/sohag/abydos1.jpg",
+    "/images/sohag/abydos2.jpg",
+    "/images/sohag/abydos3.jpg"
+  ]
+},
+{
+  "id": 83,
+  "title": "White Monastery",
+  "description": "Historic Coptic monastery with magnificent limestone walls.",
+  "longdescription": "Founded in the 4th century, the White Monastery is one of Egypt's most important Christian monuments and showcases remarkable Coptic architecture.",
+  "lat": 26.5607,
+  "lng": 31.7096,
+  "tags": ["historical","cultural","photography"],
+  "city": "Sohag",
+  "rating": 4.7,
+  "reviews": 1982,
+  "coverImage": "/images/sohag/white-monastery.jpg",
+  "gallery": [
+    "/images/sohag/white1.jpg",
+    "/images/sohag/white2.jpg",
+    "/images/sohag/white3.jpg"
+  ]
+},
+{
+  "id": 84,
+  "title": "Red Monastery",
+  "description": "Beautiful monastery famous for colorful ancient frescoes.",
+  "longdescription": "The Red Monastery preserves spectacular wall paintings and remains one of the finest examples of early Christian art in Egypt.",
+  "lat": 26.5583,
+  "lng": 31.7054,
+  "tags": ["historical","cultural","photography"],
+  "city": "Sohag",
+  "rating": 4.7,
+  "reviews": 1625,
+  "coverImage": "/images/sohag/red-monastery.jpg",
+  "gallery": [
+    "/images/sohag/red1.jpg",
+    "/images/sohag/red2.jpg",
+    "/images/sohag/red3.jpg"
+  ]
+},
+{
+  "id": 85,
+  "title": "Temple of Horus",
+  "description": "The most complete ancient Egyptian temple.",
+  "longdescription": "Located in Edfu, the Temple of Horus is one of the best-preserved temples in Egypt, showcasing impressive columns, statues and inscriptions.",
+  "lat": 24.9779,
+  "lng": 32.8744,
+  "tags": ["historical","photography","mysterious"],
+  "city": "Edfu",
+  "rating": 4.9,
+  "reviews": 8235,
+  "coverImage": "/images/edfu/horus.jpg",
+  "gallery": [
+    "/images/edfu/horus1.jpg",
+    "/images/edfu/horus2.jpg",
+    "/images/edfu/horus3.jpg"
+  ]
+},
+{
+  "id": 86,
+  "title": "Kom Ombo Temple",
+  "description": "Unique double temple dedicated to Sobek and Horus.",
+  "longdescription": "Kom Ombo Temple overlooks the Nile and is famous for its twin design, crocodile museum and beautiful riverside setting.",
+  "lat": 24.4525,
+  "lng": 32.9288,
+  "tags": ["historical","photography","mysterious","cultural"],
+  "city": "Aswan",
+  "rating": 4.8,
+  "reviews": 7118,
+  "coverImage": "/images/aswan/komombo.jpg",
+  "gallery": [
+    "/images/aswan/komombo1.jpg",
+    "/images/aswan/komombo2.jpg",
+    "/images/aswan/komombo3.jpg"
+  ]
+},
+{
+  "id": 87,
+  "title": "Temple of Khnum",
+  "description": "Ancient temple dedicated to the ram-headed god Khnum.",
+  "longdescription": "Located in Esna, the Temple of Khnum is renowned for its richly decorated hypostyle hall and colorful astronomical ceiling.",
+  "lat": 25.2938,
+  "lng": 32.5532,
+  "tags": ["historical","cultural","photography"],
+  "city": "Esna",
+  "rating": 4.7,
+  "reviews": 2748,
+  "coverImage": "/images/esna/khnum.jpg",
+  "gallery": [
+    "/images/esna/khnum1.jpg",
+    "/images/esna/khnum2.jpg",
+    "/images/esna/khnum3.jpg"
+  ]
+},
+{
+  "id": 88,
+  "title": "El Kab",
+  "description": "Ancient city with tombs, temples and rock inscriptions.",
+  "longdescription": "El Kab offers visitors an off-the-beaten-path archaeological experience featuring New Kingdom tombs and ancient city walls.",
+  "lat": 25.1404,
+  "lng": 32.8174,
+  "tags": ["historical","hidden","photography"],
+  "city": "Luxor",
+  "rating": 4.6,
+  "reviews": 1392,
+  "coverImage": "/images/luxor/elkab.jpg",
+  "gallery": [
+    "/images/luxor/elkab1.jpg",
+    "/images/luxor/elkab2.jpg",
+    "/images/luxor/elkab3.jpg"
+  ]
+},
+{
+  "id": 89,
+  "title": "Qena Corniche",
+  "description": "A scenic Nile promenade perfect for evening walks.",
+  "longdescription": "Qena Corniche offers beautiful Nile views, cafés, local restaurants and a relaxing atmosphere for families and visitors.",
+  "lat": 26.1551,
+  "lng": 32.7160,
+  "tags": ["food","romantic","nature","photography"],
+  "city": "Qena",
+  "rating": 4.5,
+  "reviews": 2581,
+  "coverImage": "/images/qena/corniche.jpg",
+  "gallery": [
+    "/images/qena/corniche1.jpg",
+    "/images/qena/corniche2.jpg",
+    "/images/qena/corniche3.jpg"
+  ]
+},
+{
+  "id": 90,
+  "title": "Akhmim Museum",
+  "description": "Museum displaying remarkable artifacts from Upper Egypt.",
+  "longdescription": "Akhmim Museum showcases statues, coffins, textiles and archaeological discoveries from the Sohag region spanning thousands of years.",
+  "lat": 26.5624,
+  "lng": 31.7452,
+  "tags": ["historical","cultural","modern"],
+  "city": "Sohag",
+  "rating": 4.6,
+  "reviews": 1164,
+  "coverImage": "/images/sohag/akhmim.jpg",
+  "gallery": [
+    "/images/sohag/akhmim1.jpg",
+    "/images/sohag/akhmim2.jpg",
+    "/images/sohag/akhmim3.jpg"
+  ]
+},
+{
+  "id": 91,
+  "title": "Orange Bay",
+  "description": "A tropical island getaway with crystal-clear turquoise waters.",
+  "longdescription": "Orange Bay is one of Hurghada's most popular beach destinations, offering white sand beaches, snorkeling, swimming and relaxing beach lounges.",
+  "lat": 27.2578,
+  "lng": 33.9398,
+  "tags": ["beach","nature","photography","romantic"],
+  "city": "Hurghada",
+  "rating": 4.9,
+  "reviews": 13241,
+  "coverImage": "/images/hurghada/orangebay.jpg",
+  "gallery": [
+    "/images/hurghada/orangebay1.jpg",
+    "/images/hurghada/orangebay2.jpg",
+    "/images/hurghada/orangebay3.jpg"
+  ]
+},
+{
+  "id": 92,
+  "title": "Abu Dabbab Beach",
+  "description": "A beautiful beach famous for sea turtles and dugongs.",
+  "longdescription": "Abu Dabbab is one of Marsa Alam's top snorkeling beaches where visitors frequently encounter sea turtles and the rare dugong.",
+  "lat": 25.3158,
+  "lng": 34.7428,
+  "tags": ["diving","nature","beach","photography"],
+  "city": "Marsa Alam",
+  "rating": 4.9,
+  "reviews": 8215,
+  "coverImage": "/images/marsaalam/abudabbab.jpg",
+  "gallery": [
+    "/images/marsaalam/abudabbab1.jpg",
+    "/images/marsaalam/abudabbab2.jpg",
+    "/images/marsaalam/abudabbab3.jpg"
+  ]
+},
+{
+  "id": 93,
+  "title": "Dolphin House Reef",
+  "description": "One of Egypt's best places to swim with wild dolphins.",
+  "longdescription": "Sha'ab Samadai, known as Dolphin House, offers unforgettable snorkeling trips where visitors can observe spinner dolphins in their natural habitat.",
+  "lat": 24.9874,
+  "lng": 35.1007,
+  "tags": ["diving","adventure","nature","photography"],
+  "city": "Marsa Alam",
+  "rating": 4.9,
+  "reviews": 6748,
+  "coverImage": "/images/marsaalam/dolphinhouse.jpg",
+  "gallery": [
+    "/images/marsaalam/dolphin1.jpg",
+    "/images/marsaalam/dolphin2.jpg",
+    "/images/marsaalam/dolphin3.jpg"
+  ]
+},
+{
+  "id": 94,
+  "title": "Naama Bay",
+  "description": "The vibrant heart of Sharm El Sheikh.",
+  "longdescription": "Naama Bay is famous for luxury resorts, restaurants, cafés, shopping, nightlife and beautiful beaches along the Red Sea.",
+  "lat": 27.9158,
+  "lng": 34.3299,
+  "tags": ["beach","food","modern","romantic","photography"],
+  "city": "Sharm El Sheikh",
+  "rating": 4.8,
+  "reviews": 19342,
+  "coverImage": "/images/sharm/naamabay.jpg",
+  "gallery": [
+    "/images/sharm/naama1.jpg",
+    "/images/sharm/naama2.jpg",
+    "/images/sharm/naama3.jpg"
+  ]
+},
+{
+  "id": 95,
+  "title": "SOHO Square",
+  "description": "Entertainment and shopping district in Sharm El Sheikh.",
+  "longdescription": "SOHO Square offers international restaurants, cafés, boutiques, ice skating, dancing fountains and live entertainment every evening.",
+  "lat": 27.9772,
+  "lng": 34.3955,
+  "tags": ["modern","food","photography"],
+  "city": "Sharm El Sheikh",
+  "rating": 4.8,
+  "reviews": 11027,
+  "coverImage": "/images/sharm/soho.jpg",
+  "gallery": [
+    "/images/sharm/soho1.jpg",
+    "/images/sharm/soho2.jpg",
+    "/images/sharm/soho3.jpg"
+  ]
+},
+{
+  "id": 96,
+  "title": "Old Market",
+  "description": "Traditional market full of local souvenirs and restaurants.",
+  "longdescription": "Sharm Old Market combines authentic Egyptian culture with cafés, seafood restaurants and local handicrafts.",
+  "lat": 27.8617,
+  "lng": 34.2978,
+  "tags": ["food","cultural","shopping","photography"],
+  "city": "Sharm El Sheikh",
+  "rating": 4.7,
+  "reviews": 8934,
+  "coverImage": "/images/sharm/oldmarket.jpg",
+  "gallery": [
+    "/images/sharm/market1.jpg",
+    "/images/sharm/market2.jpg",
+    "/images/sharm/market3.jpg"
+  ]
+},
+{
+  "id": 97,
+  "title": "Agiba Beach",
+  "description": "One of the most beautiful beaches on the Mediterranean.",
+  "longdescription": "Located near Marsa Matrouh, Agiba Beach is famous for turquoise water, dramatic cliffs and white sand.",
+  "lat": 31.3838,
+  "lng": 27.0053,
+  "tags": ["beach","nature","photography","romantic"],
+  "city": "Marsa Matrouh",
+  "rating": 4.9,
+  "reviews": 6238,
+  "coverImage": "/images/matrouh/agiba.jpg",
+  "gallery": [
+    "/images/matrouh/agiba1.jpg",
+    "/images/matrouh/agiba2.jpg",
+    "/images/matrouh/agiba3.jpg"
+  ]
+},
+{
+  "id": 98,
+  "title": "Cleopatra Beach",
+  "description": "Historic beach associated with Queen Cleopatra.",
+  "longdescription": "Cleopatra Beach is famous for its natural rock formations, crystal-clear Mediterranean water and relaxing atmosphere.",
+  "lat": 31.3544,
+  "lng": 27.2158,
+  "tags": ["beach","historical","photography","romantic"],
+  "city": "Marsa Matrouh",
+  "rating": 4.8,
+  "reviews": 5412,
+  "coverImage": "/images/matrouh/cleopatra.jpg",
+  "gallery": [
+    "/images/matrouh/cleo1.jpg",
+    "/images/matrouh/cleo2.jpg",
+    "/images/matrouh/cleo3.jpg"
+  ]
+},
+{
+  "id": 99,
+  "title": "Rommel Cave Museum",
+  "description": "Historic cave used during World War II.",
+  "longdescription": "The Rommel Cave Museum displays military artifacts and tells the story of Field Marshal Erwin Rommel's operations in North Africa.",
+  "lat": 31.3528,
+  "lng": 27.2392,
+  "tags": ["historical","cultural","modern"],
+  "city": "Marsa Matrouh",
+  "rating": 4.6,
+  "reviews": 2187,
+  "coverImage": "/images/matrouh/rommel.jpg",
+  "gallery": [
+    "/images/matrouh/rommel1.jpg",
+    "/images/matrouh/rommel2.jpg",
+    "/images/matrouh/rommel3.jpg"
+  ]
+},
+{
+  "id": 100,
+  "title": "El Alamein War Museum",
+  "description": "Museum dedicated to the famous WWII battles.",
+  "longdescription": "The El Alamein War Museum preserves tanks, weapons, uniforms and historical exhibits documenting one of the most significant battles of World War II.",
+  "lat": 30.8336,
+  "lng": 28.9555,
+  "tags": ["historical","modern","cultural"],
+  "city": "El Alamein",
+  "rating": 4.7,
+  "reviews": 3529,
+  "coverImage": "/images/elalamein/museum.jpg",
+  "gallery": [
+    "/images/elalamein/museum1.jpg",
+    "/images/elalamein/museum2.jpg",
+    "/images/elalamein/museum3.jpg"
+  ]
+},
+{
+  "id": 101,
+  "title": "Ramesseum",
+  "description": "The memorial temple of Pharaoh Ramesses II.",
+  "longdescription": "The Ramesseum is the grand mortuary temple of Ramesses II, featuring enormous fallen statues, impressive columns and beautifully carved reliefs depicting ancient battles.",
+  "lat": 25.7204,
+  "lng": 32.6018,
+  "tags": ["historical","photography","mysterious"],
+  "city": "Luxor",
+  "rating": 4.8,
+  "reviews": 3841,
+  "coverImage": "/images/luxor/ramesseum.jpg",
+  "gallery": [
+    "/images/luxor/ramesseum1.jpg",
+    "/images/luxor/ramesseum2.jpg",
+    "/images/luxor/ramesseum3.jpg"
+  ]
+},
+{
+  "id": 102,
+  "title": "Medinet Habu",
+  "description": "A magnificent temple complex of Ramesses III.",
+  "longdescription": "Medinet Habu is one of Luxor's most underrated temples, famous for its massive walls, colorful reliefs and remarkably preserved inscriptions.",
+  "lat": 25.7193,
+  "lng": 32.6011,
+  "tags": ["historical","photography","hidden","mysterious"],
+  "city": "Luxor",
+  "rating": 4.9,
+  "reviews": 5294,
+  "coverImage": "/images/luxor/medinethabu.jpg",
+  "gallery": [
+    "/images/luxor/habu1.jpg",
+    "/images/luxor/habu2.jpg",
+    "/images/luxor/habu3.jpg"
+  ]
+},
+{
+  "id": 103,
+  "title": "Valley of the Queens",
+  "description": "Ancient burial place of Egyptian queens and royal children.",
+  "longdescription": "The Valley of the Queens contains more than 90 tombs, including the spectacular Tomb of Queen Nefertari, famous for its vibrant paintings.",
+  "lat": 25.7274,
+  "lng": 32.5943,
+  "tags": ["historical","mysterious","photography"],
+  "city": "Luxor",
+  "rating": 4.8,
+  "reviews": 4688,
+  "coverImage": "/images/luxor/queens.jpg",
+  "gallery": [
+    "/images/luxor/queens1.jpg",
+    "/images/luxor/queens2.jpg",
+    "/images/luxor/queens3.jpg"
+  ]
+},
+{
+  "id": 104,
+  "title": "Tombs of the Nobles",
+  "description": "Beautifully decorated tombs overlooking the Nile.",
+  "longdescription": "Unlike the royal tombs, these belonged to high-ranking officials and feature colorful scenes of everyday life in Ancient Egypt.",
+  "lat": 25.7260,
+  "lng": 32.6071,
+  "tags": ["historical","hidden","photography"],
+  "city": "Luxor",
+  "rating": 4.7,
+  "reviews": 2012,
+  "coverImage": "/images/luxor/nobles.jpg",
+  "gallery": [
+    "/images/luxor/nobles1.jpg",
+    "/images/luxor/nobles2.jpg",
+    "/images/luxor/nobles3.jpg"
+  ]
+},
+{
+  "id": 105,
+  "title": "Colossi of Memnon",
+  "description": "Two gigantic stone statues of Pharaoh Amenhotep III.",
+  "longdescription": "Standing for over 3,400 years, the Colossi of Memnon are among Luxor's most iconic landmarks and a popular sunrise photography location.",
+  "lat": 25.7208,
+  "lng": 32.6100,
+  "tags": ["historical","photography"],
+  "city": "Luxor",
+  "rating": 4.7,
+  "reviews": 9180,
+  "coverImage": "/images/luxor/memnon.jpg",
+  "gallery": [
+    "/images/luxor/memnon1.jpg",
+    "/images/luxor/memnon2.jpg",
+    "/images/luxor/memnon3.jpg"
+  ]
+},
+{
+  "id": 106,
+  "title": "Luxor Museum",
+  "description": "One of Egypt's finest archaeological museums.",
+  "longdescription": "Luxor Museum displays exceptional statues, jewelry, mummies and artifacts discovered around ancient Thebes in a beautifully designed setting.",
+  "lat": 25.7058,
+  "lng": 32.6393,
+  "tags": ["historical","modern","cultural"],
+  "city": "Luxor",
+  "rating": 4.8,
+  "reviews": 5760,
+  "coverImage": "/images/luxor/museum.jpg",
+  "gallery": [
+    "/images/luxor/museum1.jpg",
+    "/images/luxor/museum2.jpg",
+    "/images/luxor/museum3.jpg"
+  ]
+},
+{
+  "id": 107,
+  "title": "Mummification Museum",
+  "description": "Museum explaining ancient Egyptian mummification techniques.",
+  "longdescription": "This unique museum showcases mummified humans and animals alongside the tools and rituals used during the mummification process.",
+  "lat": 25.6996,
+  "lng": 32.6395,
+  "tags": ["historical","mysterious","modern"],
+  "city": "Luxor",
+  "rating": 4.6,
+  "reviews": 2475,
+  "coverImage": "/images/luxor/mummification.jpg",
+  "gallery": [
+    "/images/luxor/mummy1.jpg",
+    "/images/luxor/mummy2.jpg",
+    "/images/luxor/mummy3.jpg"
+  ]
+},
+{
+  "id": 108,
+  "title": "Banana Island",
+  "description": "A peaceful Nile island famous for banana plantations.",
+  "longdescription": "Visitors reach Banana Island by boat to enjoy lush gardens, fresh fruit and relaxing views along the Nile.",
+  "lat": 25.6844,
+  "lng": 32.6117,
+  "tags": ["nature","food","romantic","photography"],
+  "city": "Luxor",
+  "rating": 4.6,
+  "reviews": 3312,
+  "coverImage": "/images/luxor/banana.jpg",
+  "gallery": [
+    "/images/luxor/banana1.jpg",
+    "/images/luxor/banana2.jpg",
+    "/images/luxor/banana3.jpg"
+  ]
+},
+{
+  "id": 109,
+  "title": "Hot Air Balloon Ride",
+  "description": "A breathtaking sunrise flight above Luxor's ancient monuments.",
+  "longdescription": "One of the world's most famous balloon experiences, offering panoramic views of temples, the Nile and the Valley of the Kings at sunrise.",
+  "lat": 25.7241,
+  "lng": 32.6017,
+  "tags": ["adventure","photography","romantic","nature"],
+  "city": "Luxor",
+  "rating": 5.0,
+  "reviews": 14562,
+  "coverImage": "/images/luxor/balloon.jpg",
+  "gallery": [
+    "/images/luxor/balloon1.jpg",
+    "/images/luxor/balloon2.jpg",
+    "/images/luxor/balloon3.jpg"
+  ]
+},
+{
+  "id": 110,
+  "title": "Luxor Corniche",
+  "description": "A scenic riverside promenade along the Nile.",
+  "longdescription": "The Luxor Corniche is perfect for evening walks, enjoying cafés, horse carriage rides and beautiful sunset views over the Nile.",
+  "lat": 25.6965,
+  "lng": 32.6421,
+  "tags": ["romantic","food","nature","photography"],
+  "city": "Luxor",
+  "rating": 4.7,
+  "reviews": 7024,
+  "coverImage": "/images/luxor/corniche.jpg",
+  "gallery": [
+    "/images/luxor/corniche1.jpg",
+    "/images/luxor/corniche2.jpg",
+    "/images/luxor/corniche3.jpg"
+  ]
+}
+
 ]
