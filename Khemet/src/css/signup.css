@@ -17,20 +17,6 @@
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; }
-
-body {
-  font-family: 'DM Sans', sans-serif;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: #0A1F35;
-  background-image:
-    radial-gradient(ellipse 65% 45% at 10% 100%, #1B4F6B 0%, transparent 55%),
-    radial-gradient(ellipse 55% 40% at 90% 0%,   #1B4F6B 0%, transparent 55%);
-}
-
 .signup-main{
   padding: 80px;
   padding-top: 130px;
@@ -39,8 +25,6 @@ body {
   align-content: center;
   align-items: center;
 }
-
-
 /* ── Container card ── */
 .container {
   display: none;

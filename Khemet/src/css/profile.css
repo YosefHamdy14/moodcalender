@@ -391,22 +391,26 @@ html { scroll-behavior: smooth; }
 .info-sec-btn {
   display: flex;
   margin-right: 20px;
-  border: hsl(33, 31%, 36%, 0.1) 1px solid;
+  border: hsl(201, 60%, 26%,0.1) 1px solid;
   border-radius: 20px;
-  padding: 5px 15px;
+  padding: 7px 20px;
   align-items: center;
   justify-items: center;
   text-align: center;
-  background-color: #EFE4C4;
-  color: #7A6040;
+  background-color: hsl(40, 79%, 96%,0.5);
+  color: #1B4F6B;
   height: 30px;
   transition: background 0.2s ease;
   cursor: pointer;
   font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
-  font-size: 13px;
+  font-size: 14.5px;
+  letter-spacing: 1px;
+  justify-self: end;
+  margin: 10px;
 }
 .info-sec-btn:hover {
-  background-color: hsla(33, 31%, 36%, 0.1);
+  background-color:  hsl(40, 79%, 96%);
+    border: hsl(201, 60%, 26%,0.33) 1px solid;
 }
 .details-sec-head {
   display: flex;
@@ -655,67 +659,108 @@ html { scroll-behavior: smooth; }
   background-color: oklch(73.86% 0.13492 80.564);
 }
 .pf-content-section-header{
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr ;
   align-items: center;
-  align-content: center;
   margin-bottom: 50px;
 }
-.fav-more{
+.more-places-links {
+  padding: 5px;
   display: flex;
-  margin-right: 20px;
-  border: hsl(33, 31%, 36%, 0.1) 1px solid;
-  border-radius: 20px;
-  padding: 5px 15px;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+
+.fav-more,
+.exfav-more {
+  display: inline-flex;
   align-items: center;
-  justify-items: center;
-  text-align: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 20px;
+  padding: 8px 14px;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  cursor: pointer;
+  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.fav-more {
+  border: 1px solid hsl(33, 31%, 36%, 0.1);
   background-color: #EFE4C4;
   color: #7A6040;
-  height: 30px;
-  padding: 15px 30px;
-  transition: background 0.2s ease;
-  cursor: pointer;
-  font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
-  font-size: 13px;
-  align-self: center;
-  justify-self: right;
 }
-.fav-more:hover{
-  border: hsl(33, 31%, 36%, 0.3) 1px solid;
+.fav-more:hover {
+  border-color: hsl(33, 31%, 36%, 0.3);
   background-color: hsla(33, 31%, 36%, 0.1);
 }
-.profile-btns-add{
-  display: flex;
-  margin-right: 20px;
-  border: hsl(201, 60%, 26%,0.1) 1px solid;
-  border-radius: 20px;
-  padding: 5px 15px;
-  align-items: center;
-  justify-items: center;
-  text-align: center;
-  background-color: hsl(201, 60%, 26%,0.1);
+.fav-more svg{
+  top: auto;
+}
+.exfav-more {
+  border: 1px solid hsl(201, 60%, 26%, 0.2);
+  background-color: hsl(201, 60%, 26%, 0.1);
   color: #1B4F6B;
-  height: 30px;
-  padding: 15px 30px;
-  transition: background 0.2s ease;
+}
+.exfav-more:hover {
+  border-color: hsl(201, 60%, 26%, 0.5);
+  background-color: hsl(201, 60%, 26%, 0.2);
+}
+.cont-btns {
+  padding: 5px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+   justify-content: end;
+}
+.cont-more,
+.profile-btns-add {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  border-radius: 20px;
+  padding: 8px 16px;
+  line-height: 1;
+  transition: background 0.2s ease, border-color 0.2s ease;
   cursor: pointer;
   font-family: "Karla", ui-sans-serif, system-ui, sans-serif;
   font-size: 13px;
-  align-self: center;
-  justify-self: right;
+  white-space: nowrap;
 }
-.profile-btns-add:hover{
-border: hsl(201, 60%, 26%,0.3) 1px solid;
-background-color: hsl(201, 60%, 26%,0.2);
+
+.cont-more {
+  justify-self: start;
+  border: 1px solid hsl(33, 31%, 36%, 0.1);
+  background-color: #EFE4C4;
+  color: #7A6040;
+}
+.cont-more svg {
+  position: relative;
+  top: 1px;
+}
+.cont-more:hover {
+  border-color: hsl(33, 31%, 36%, 0.3);
+  background-color: hsla(33, 31%, 36%, 0.1);
+}
+
+.profile-btns-add {
+  justify-self: end;
+  border: 1px solid hsl(201, 60%, 26%, 0.1);
+  background-color: hsl(201, 60%, 26%, 0.1);
+  color: #1B4F6B;
+}
+.profile-btns-add:hover {
+  border-color: hsl(201, 60%, 26%, 0.3);
+  background-color: hsl(201, 60%, 26%, 0.2);
 }
 .title-sect-saved{
   color: #1B4F6B;
   font-family: "Cormorant Garamond", ui-serif, Georgia, serif;
   font-size: 24px;
-}
-.cont-btns{
-  display: flex;
 }
 
 /* override contrib-card horizontal layout when used inside profile grid */
@@ -798,6 +843,18 @@ background-color: hsl(201, 60%, 26%,0.2);
   .profile-hero-name {
     font-size: 38px;
   }
+ .pf-content-section-header{
+  
+ }
+  .exfav-more,
+  .fav-more {
+    font-size: 13px;
+    width: fit-content;
+    text-align: center;
+    justify-self: center;
+    margin: 5px 2px;
+  }
+
 }
 
 
@@ -846,6 +903,38 @@ background-color: hsl(201, 60%, 26%,0.2);
   }
   .pf-trips-grid {
     grid-template-columns: 1fr 1fr;
+  }
+  .pf-content-section-header {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .title-sect-saved{
+    text-align: center;
+  }
+  .more-places-links{
+    display: grid;
+   grid-template-columns: 1fr;
+  }
+  .exfav-more,
+  .fav-more {
+    font-size: 13px;
+    width: 85%;
+    text-align: center;
+    justify-self: center;
+    margin: 5px 0px;
+  }
+  .cont-btns{
+    grid-template-columns: 1fr;
+    justify-content: center;
+  }
+  .profile-btns-add,
+  .cont-more{
+    font-size: 13px;
+    width: 85%;
+   justify-content: center;
+    justify-self: center;
+    margin: 5px 0px;
   }
 }
 
@@ -928,5 +1017,32 @@ background-color: hsl(201, 60%, 26%,0.2);
   }
   .pf-empty-state {
     padding: 40px 10px;
+  }
+  .pf-content-section-header {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6px;
+  }
+  .title-sect-saved {
+    font-size: 18px;
+  }
+  .exfav-more,
+  .fav-more {
+    justify-self: center;
+    font-size: 13px;
+    width: 100%;
+    text-align: center;
+  }
+   .cont-btns{
+    grid-template-columns: 1fr;
+     justify-content: center;
+  }
+  .profile-btns-add,
+  .cont-more{
+    font-size: 13px;
+    width: 85%;
+   justify-content: center;
+    justify-self: center;
+    margin: 5px 0px;
   }
 }

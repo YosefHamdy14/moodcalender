@@ -14,14 +14,11 @@ function PlanCard({
           src={plan.places[0]?.coverImage}
           alt={plan.title}
         />
-
         <span className="plan-badge">
           {plan.title}
         </span>
       </div>
-
       <div className="plan-content">
-
         <h3 className="plan-title">
   {plan.title}
 </h3>
